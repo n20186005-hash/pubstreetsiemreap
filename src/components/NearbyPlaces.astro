@@ -1,0 +1,26 @@
+---
+import Icon from './Icon.astro';
+
+const { messages: m } = Astro.props as { messages: any };
+const near = m.nearby;
+---
+
+<section class="section-padding" id="nearby">
+  <div class="container fade-up">
+    <span class="eyebrow">{near.eyebrow}</span>
+    <h2 class="section-title">{near.title}</h2>
+    {near.subtitle && <p class="section-lead">{near.subtitle}</p>}
+
+    <div class="nearby-grid">
+      {near.places.map((p: any) => (
+        <div class="card card-pad nearby-card">
+          <div class="nearby-head">
+            <h3>{p.name}</h3>
+            <span class="nearby-dist">{p.distance}</span>
+          </div>
+          <p>{p.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

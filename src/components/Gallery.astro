@@ -1,0 +1,37 @@
+---
+import Icon from './Icon.astro';
+import { mapsUrl } from '../config';
+
+const { messages: m } = Astro.props as { messages: any };
+const gal = m.gallery;
+---
+
+<section class="section-padding" id="gallery">
+  <div class="container fade-up">
+    <span class="eyebrow">{gal.eyebrow}</span>
+    <h2 class="section-title">{gal.title}</h2>
+    {gal.subtitle && <p class="section-lead">{gal.subtitle}</p>}
+
+    <div class="gallery-grid">
+      {gal.images.map((img: any) => (
+        <figure class={`gallery-item ${img.span || 'gallery-span-1'}`}>
+          <img src={`/gallery/${img.file}`} alt={img.caption} loading="lazy" data-gallery-img />
+          <figcaption class="cap">{img.caption}</figcaption>
+        </figure>
+      ))}
+    </div>
+
+    <div class="gallery-cta">
+      <a class="btn-cta btn-cta-secondary" href={mapsUrl} target="_blank" rel="noopener">
+        <Icon name="map" size={18} /> {gal.ctaLabel}
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" style="display:none;">
+  <button class="lb-close" id="lb-close" aria-label="Close"><Icon name="x" size={22} /></button>
+  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous"><Icon name="chevron" size={22} /></button>
+  <img id="lightbox-img" src="" alt="" />
+  <button class="lb-nav lb-next" id="lb-next" aria-label="Next"><Icon name="chevron" size={22} /></button>
+</div>

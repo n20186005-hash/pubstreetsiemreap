@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro';
+
+const { messages: m } = Astro.props as { messages: any };
+const pr = m.practical;
+---
+
+<section class="section-padding" id="practical">
+  <div class="container fade-up">
+    <span class="eyebrow">{pr.eyebrow}</span>
+    <h2 class="section-title">{pr.title}</h2>
+    {pr.subtitle && <p class="section-lead">{pr.subtitle}</p>}
+
+    <div class="practical-grid">
+      {pr.cards.map((c: any) => (
+        <div class="card card-pad practical-card">
+          <div class="practical-ico"><Icon name={c.icon} size={24} /></div>
+          <h3>{c.title}</h3>
+          <p>{c.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

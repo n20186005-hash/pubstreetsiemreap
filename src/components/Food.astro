@@ -1,0 +1,24 @@
+---
+import Icon from './Icon.astro';
+
+const { messages: m } = Astro.props as { messages: any };
+const food = m.food;
+---
+
+<section class="food-section section-padding" id="food">
+  <div class="container fade-up">
+    <span class="eyebrow">{food.eyebrow}</span>
+    <h2 class="section-title">{food.title}</h2>
+    <p class="food-intro">{food.intro}</p>
+
+    <div class="food-grid">
+      {food.items.map((it: any) => (
+        <div class="card card-pad food-card">
+          <div class="night-ico"><Icon name="food" size={24} /></div>
+          <h3>{it.name}</h3>
+          <p>{it.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

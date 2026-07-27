@@ -1,0 +1,46 @@
+---
+import { languagesList } from '../i18n/ui';
+import Icon from './Icon.astro';
+
+const { lang, messages: m, t } = Astro.props as { lang: string; messages: any; t: (k: string) => string };
+
+const navItems = [
+  { href: '#intro', key: 'intro' },
+  { href: '#history', key: 'history' },
+  { href: '#night', key: 'night' },
+  { href: '#guide', key: 'guide' },
+  { href: '#map', key: 'map' },
+  { href: '#nearby', key: 'nearby' },
+  { href: '#food', key: 'food' },
+  { href: '#amenities', key: 'facilities' },
+  { href: '#faq', key: 'faq' },
+];
+
+const langLabels: Record<string, string> = { km: 'ខ្មែរ', en: 'English', zh: '中文' };
+---
+
+<header class="site-header">
+  <div class="container nav">
+    <a href={`/${lang}`} class="brand"><span class="dot"></span>{m.header.siteName}</a>
+
+    <ul class="nav-links" id="nav-links">
+      {navItems.map((n) => (
+        <li><a href={n.href}>{m.header[n.key as keyof typeof m.header]}</a></li>
+      ))}
+    </ul>
+
+    <div class="nav-right">
+      <div class="lang-switch">
+        {languagesList.map((l) => (
+          <a href={`/${l}`} class={l === lang ? 'active' : ''}>{langLabels[l]}</a>
+        ))}
+      </div>
+      <button class="theme-btn" id="theme-btn" aria-label={m.common.theme} title={m.common.theme}>
+        <Icon name="moon" />
+      </button>
+      <button class="menu-btn" id="menu-btn" aria-label="Menu" title="Menu">
+        <Icon name="menu" />
+      </button>
+    </div>
+  </div>
+</header>

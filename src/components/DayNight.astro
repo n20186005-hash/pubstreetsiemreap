@@ -1,0 +1,27 @@
+---
+const { messages: m } = Astro.props as { messages: any };
+const dn = m.daynight;
+---
+
+<section class="bt-section section-padding" id="daynight">
+  <div class="container fade-up">
+    <span class="eyebrow">{dn.eyebrow}</span>
+    <h2 class="section-title">{dn.title}</h2>
+    {dn.subtitle && <p class="section-lead">{dn.subtitle}</p>}
+
+    <h3 class="bt-day-title">{dn.compareTitle}</h3>
+    <div class="bt-grid">
+      {dn.cards.map((c: any) => (
+        <div class={`card card-pad bt-card tone-${c.tone}`}>
+          <div class="bt-head">
+            <span class="bt-label">{c.label}</span>
+            <span class="bt-score">{c.score}</span>
+          </div>
+          <p>{c.text}</p>
+        </div>
+      ))}
+    </div>
+
+    {dn.note && <p class="bt-note">{dn.note}</p>}
+  </div>
+</section>

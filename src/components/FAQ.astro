@@ -1,0 +1,28 @@
+---
+import Icon from './Icon.astro';
+
+const { messages: m } = Astro.props as { messages: any };
+const faq = m.faq;
+---
+
+<section class="faq-section section-padding" id="faq">
+  <div class="container container-narrow fade-up">
+    <span class="eyebrow">{faq.eyebrow}</span>
+    <h2 class="section-title">{faq.title}</h2>
+    {faq.subtitle && <p class="section-lead">{faq.subtitle}</p>}
+
+    <div class="faq-list">
+      {faq.items.map((it: any) => (
+        <div class="faq-item" data-open="false">
+          <button class="faq-q">
+            <span>{it.q}</span>
+            <Icon name="chevron" size={20} class="chev" />
+          </button>
+          <div class="faq-a">
+            <div class="inner">{it.a}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

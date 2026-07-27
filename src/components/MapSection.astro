@@ -1,0 +1,59 @@
+---
+import Icon from './Icon.astro';
+import { mapsEmbedSrc, mapsUrl } from '../config';
+
+const { messages: m } = Astro.props as { messages: any };
+const map = m.map;
+---
+
+<section class="map-section section-padding" id="map">
+  <div class="container fade-up">
+    <span class="eyebrow">{map.eyebrow}</span>
+    <h2 class="section-title">{map.title}</h2>
+    {map.subtitle && <p class="section-lead">{map.subtitle}</p>}
+
+    <div class="map-layout">
+      <div class="map-info">
+        <div class="map-info-row">
+          <span class="map-info-label">{map.addressLabel}</span>
+          <span class="map-info-value">{map.addressValue}</span>
+        </div>
+        <div class="map-info-row">
+          <span class="map-info-label">{map.hoursLabel}</span>
+          <span class="map-info-value">{map.hoursValue}</span>
+        </div>
+        <div class="map-info-row">
+          <span class="map-info-label">{map.openLabel}</span>
+          <span class="map-info-value">{map.openValue}</span>
+        </div>
+        <a class="btn-cta btn-cta-primary map-open" href={mapsUrl} target="_blank" rel="noopener">
+          <Icon name="map" size={18} /> {map.ctaLabel}
+        </a>
+      </div>
+
+      <div class="map-container">
+        <iframe
+          src={mapsEmbedSrc}
+          title={map.title}
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="map-modes">
+      {map.modes.map((md: any) => (
+        <div class="map-mode">
+          <h4><Icon name={md.icon} size={18} /> {md.title}</h4>
+          <p class="map-mode-text">{md.text}</p>
+          {md.steps && (
+            <ol class="map-mode-steps">
+              {md.steps.map((s: string) => <li>{s}</li>)}
+            </ol>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

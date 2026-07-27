@@ -1,0 +1,49 @@
+---
+const { name, size = 22 } = Astro.props as { name: string; size?: number };
+const paths: Record<string, string> = {
+  moon: '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>',
+  menu: '<path d="M3 6h18M3 12h18M3 18h18"/>',
+  map: '<path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/>',
+  info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+  image: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 16l-5-5L5 20"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  location: '<path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/>',
+  star: '<path d="M12 3.5l2.6 5.27 5.82.85-4.21 4.1 1 5.8L12 17.77 6.79 19.52l1-5.8-4.21-4.1 5.82-.85z"/>',
+  pin: '<path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/>',
+  route: '<circle cx="6" cy="19" r="2.5"/><circle cx="18" cy="5" r="2.5"/><path d="M8.5 19H14a3.5 3.5 0 0 0 0-7H9a3.5 3.5 0 0 1 0-7h4.5"/>',
+  users: '<circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 6.1M17.5 20a5.5 5.5 0 0 0-3-4.9"/>',
+  ticket: '<path d="M3 8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 2 2 0 0 0 0 4 2 2 0 0 1-2 2H5a2 2 0 0 1-2-2 2 2 0 0 0 0-4z"/><path d="M13 6v12" stroke-dasharray="2 2"/>',
+  compass: '<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 13 13l-4.5 2.5L11 11z"/>',
+  walk: '<circle cx="13" cy="4" r="1.6"/><path d="M11 21l1.5-5-3-2 1-4 4 2 2 3M12.5 10l2.5-1"/>',
+  car: '<path d="M5 13l1.5-4.5A2 2 0 0 1 8.4 7h7.2a2 2 0 0 1 1.9 1.5L19 13v4h-2M5 17H3v-4l2-? M5 13h14M7 17h10"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/>',
+  plane: '<path d="M10.5 13.5 3 12l1-2 7 1 4.5-6a1.6 1.6 0 0 1 2.7 1.7L14 11l5 1-1 2-6-1-2.5 4 1 2-2 1-1.5-3z"/>',
+  chevron: '<path d="M6 9l6 6 6-6"/>',
+  check: '<path d="M20 6 9 17l-5-5"/>',
+  x: '<path d="M18 6 6 18M6 6l12 12"/>',
+  warning: '<path d="M12 3 2 20h20L12 3z"/><path d="M12 9v5M12 17h.01"/>',
+  camera: '<path d="M3 8a2 2 0 0 1 2-2h2l1.5-2h7L19 6h0a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.2"/>',
+  food: '<path d="M5 3v7a2 2 0 0 0 4 0V3M7 3v18M17 3c-1.5 0-3 2-3 5s1 4 3 4v9"/>',
+  music: '<path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/>',
+  suncloud: '<circle cx="8" cy="9" r="3.2"/><path d="M8 2.5v1.5M8 14v1.5M1.5 9h1.5M13 9h1.5M3.5 4.5l1 1M12.5 4.5l-1 1"/><path d="M17 19H8a4 4 0 0 1 0-8 5 5 0 0 1 9.5 1.5A3.5 3.5 0 0 1 17 19z"/>',
+  calendar: '<rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M3.5 9h17M8 3v4M16 3v4"/>',
+  handshake: '<path d="M11 17l-4-4 1.5-1.5 2.5 2.5M13 17l4-4-1.5-1.5-2.5 2.5M7 12 3 8.5 5 6l4 3M17 12l4-3.5L19 6l-4 3"/>',
+  shield: '<path d="M12 3 5 6v5c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z"/>',
+  language: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/>',
+  sparkle: '<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',
+  coffee: '<path d="M4 8h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9h2.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 2v2M11 2v2"/>',
+  globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
+  restroom: '<path d="M7 3h10M9 3v6M15 3v6M12 9v3M8 21l1.5-9h5L16 21M9.5 21h5"/>',
+  parking: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 16V8h3.2a3 3 0 0 1 0 6H9"/>',
+  bed: '<path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6M3 14h18M3 18v2M21 18v2M7 10V8a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2"/>',
+  shop: '<path d="M4 9h16l-1 11H5L4 9z"/><path d="M8 9V6a4 4 0 0 1 8 0v3M4 9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2"/>',
+  fuel: '<path d="M4 21V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v16M4 21h10M14 9h2a2 2 0 0 1 2 2v6a2 2 0 0 0 2 2M16 13h2"/>',
+  atm: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M6 9v6M10 9v6M6 12h4M14 9l2 4 2-4M14 15h4"/>',
+  medical: '<rect x="4" y="6" width="16" height="13" rx="2"/><path d="M12 9v7M8.5 12.5h7"/>',
+  wifi: '<path d="M2 8.5a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0M8.5 15.5a6 6 0 0 1 7 0"/><circle cx="12" cy="19" r="1.2"/>',
+};
+const body = paths[name] || paths.info;
+---
+<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24"
+  fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+  set:html={body}></svg>

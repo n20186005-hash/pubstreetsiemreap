@@ -1,0 +1,43 @@
+---
+import Icon from './Icon.astro';
+import { mapsUrl } from '../config';
+
+const { messages: m, t } = Astro.props as { lang: string; messages: any; t: (k: string) => string };
+const hero = m.hero;
+---
+
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="container hero-inner">
+    <p class="local">{hero.local}</p>
+    <h1>{hero.title}</h1>
+    <p class="tagline">{hero.tagline}</p>
+    {hero.sub && <p class="sub">{hero.sub}</p>}
+
+    <div class="hero-rating">
+      <span class="stars" aria-hidden="true">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <Icon name="star" size={16} />
+        ))}
+      </span>
+      <span class="num">{hero.rating}</span>
+      <span class="rev">{hero.reviews} {hero.reviewsSuffix}</span>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn-cta btn-cta-primary" href="#intro">{hero.ctaExplore}</a>
+      <a class="hero-maps-link" href={mapsUrl} target="_blank" rel="noopener">
+        <Icon name="map" size={18} /> {hero.ctaMaps}
+      </a>
+    </div>
+
+    <div class="hero-facts">
+      {hero.facts.map((f: any) => (
+        <div class="info-card">
+          <div class="k">{f.k}</div>
+          <div class="v">{f.v}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

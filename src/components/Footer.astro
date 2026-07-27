@@ -1,0 +1,72 @@
+---
+import Icon from './Icon.astro';
+import { mapsUrl } from '../config';
+
+const { messages: m, lang } = Astro.props as { lang: string; messages: any; t: (k: string) => string };
+const f = m.footer;
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href={`/${lang}`} class="brand"><span class="dot"></span>{f.siteName}</a>
+        <p class="footer-tagline">{f.tagline}</p>
+        <div class="mission-block">
+          <p class="mission-title">{f.missionTitle}</p>
+          <p class="mission-text">{f.missionText}</p>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>{f.exploreTitle}</h4>
+        <ul>
+          {f.exploreLinks.map((l: any) => (
+            <li><a href={l.href}>{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>{f.resourcesTitle}</h4>
+        <ul>
+          {f.resources.map((r: any) => (
+            <li>
+              <a href={r.url} target="_blank" rel="noopener">{r.name}</a>
+              <span class="res-val">{r.note}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-grid" style="margin-top:30px;">
+      <div class="footer-col" style="grid-column:1 / -1;">
+        <h4>{f.visitTitle}</h4>
+        <div class="footer-visit">
+          <div class="fv-row"><span class="fv-label">{f.addressLabel}</span>{f.addressValue}</div>
+          <div class="fv-row"><span class="fv-label">{f.hoursLabel}</span>{f.hoursValue}</div>
+          <div class="fv-row">
+            <a class="link-accent" href={mapsUrl} target="_blank" rel="noopener">{f.mapsLabel}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-declaration">
+      <p><Icon name="info" size={15} /> {f.declaration.org}</p>
+      <p><Icon name="image" size={15} /> {f.declaration.image}</p>
+    </div>
+
+    <nav class="footer-legal" aria-label="legal">
+      <a href={`/${lang}/privacy-policy`}>{m.legal.privacy.title}</a>
+      <a href={`/${lang}/terms-of-service`}>{m.legal.terms.title}</a>
+      <a href={`/${lang}/cookie-settings`}>{m.legal.cookie.title}</a>
+    </nav>
+
+    <div class="footer-bottom">
+      <span>{f.rights}</span>
+      <span>{f.disclaimer}</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,53 @@
+---
+import Icon from './Icon.astro';
+
+const { messages: m } = Astro.props as { messages: any };
+const intro = m.intro;
+---
+
+<section class="section-padding" id="intro">
+  <div class="container fade-up">
+    <span class="eyebrow">{intro.eyebrow}</span>
+    <h2 class="section-title">{intro.title}</h2>
+    <p class="section-lead">{intro.description}</p>
+
+    <div class="intro-body">
+      <div class="fact-grid">
+        {intro.facts.map((f: any) => (
+          <div class="fact-item">
+            <div class="ico"><Icon name={f.icon} size={22} /></div>
+            <h4>{f.k}</h4>
+            <p>{f.v}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="intro-cols">
+        <div class="card card-pad">
+          <h3>{intro.highlights.title}</h3>
+          <ul class="list-check">
+            {intro.highlights.items.map((it: any) => (
+              <li>
+                <Icon name="check" size={22} />
+                <span>{it.text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="guide card card-pad">
+          <p class="g-eyebrow">{intro.guide.eyebrow}</p>
+          <p class="g-desc">{intro.guide.description}</p>
+          <ul class="list-check">
+            {intro.guide.items.map((it: any) => (
+              <li>
+                <Icon name="check" size={22} />
+                <span>{it.text}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

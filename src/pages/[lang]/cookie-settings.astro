@@ -1,0 +1,20 @@
+---
+import { languagesList } from '../../i18n/ui';
+import { getI18n } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LegalDoc from '../../components/LegalDoc.astro';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang, messages: m, t } = getI18n(Astro.url);
+const title = m.legal.cookie.title;
+const description = m.legal.cookie.intro;
+---
+
+<BaseLayout path="/cookie-settings" noJsonLd title={title} description={description}>
+  <div class="legal-wrap">
+    <LegalDoc lang={lang} messages={m} t={t} page="cookie" />
+  </div>
+</BaseLayout>

@@ -1,0 +1,214 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getI18n, htmlLangAttr, buildAlternates } from '../i18n/ui';
+import { siteConfig, mapsUrl, attraction, GA_MEASUREMENT_ID } from '../config';
+
+const { path = '', noJsonLd = false, title: titleOverride, description: descOverride } = Astro.props as {
+  path?: string;
+  noJsonLd?: boolean;
+  title?: string;
+  description?: string;
+};
+const { lang, messages: m, t } = getI18n(Astro.url);
+
+const SITE = siteConfig.baseUrl;
+const canonical = `${SITE}/${lang}${path}`;
+const title = titleOverride ?? m.meta?.title ?? 'Pub Street Siem Reap';
+const description = descOverride ?? m.meta?.description ?? 'Discover Pub Street in Siem Reap, Cambodia.';
+const ogImage = `${SITE}/gallery/pub-street-siem-reap-1.jpg`;
+const alt = buildAlternates();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  name: 'Pub Street',
+  alternateName: attraction.name.km,
+  description,
+  image: ogImage,
+  url: canonical,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: attraction.address.streetAddress,
+    addressLocality: attraction.address.addressLocality,
+    addressCountry: attraction.address.addressCountry,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: attraction.lat,
+    longitude: attraction.lng,
+  },
+  openingHoursSpecification: [
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '00:00', closes: '23:59' },
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: attraction.rating,
+    reviewCount: attraction.reviews,
+    bestRating: 5,
+  },
+  sameAs: [mapsUrl],
+};
+---
+
+<!doctype html>
+<html lang={htmlLangAttr(lang)} data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#111827" />
+
+    {Object.entries(alt).map(([k, v]) => (
+      <link rel="alternate" hreflang={k === 'xDefault' ? 'x-default' : k} href={v} />
+    ))}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pub Street Siem Reap Guide" />
+    <meta property="og:locale" lang={lang} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    {!noJsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+    {GA_MEASUREMENT_ID && (
+      <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>
+        (function () {
+          try {
+            // Respect the visitor's consent choice from the Cookie Settings page.
+            // We only load Google Analytics when analytics cookies are allowed.
+            var consent = localStorage.getItem('cookie-consent');
+            if (consent && JSON.parse(consent).analytics !== true) return;
+          } catch (e) {}
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){ dataLayer.push(arguments); }
+          gtag('js', new Date());
+          gtag('config', GA_MEASUREMENT_ID);
+        })();
+      </script>
+    )}
+
+    <script is:inline>
+      (function () {
+        try {
+          var root = document.documentElement;
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') {
+            root.setAttribute('data-theme', saved);
+          } else {
+            root.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <Header lang={lang} messages={m} t={t} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} messages={m} t={t} />
+
+    <script is:inline>
+      // theme toggle
+      (function () {
+        var btn = document.getElementById('theme-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+          var root = document.documentElement;
+          var cur = root.getAttribute('data-theme');
+          var next = cur === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+      })();
+
+      // mobile menu
+      (function () {
+        var btn = document.getElementById('menu-btn');
+        var nav = document.getElementById('nav-links');
+        if (btn && nav) {
+          btn.addEventListener('click', function () {
+            nav.classList.toggle('open');
+          });
+        }
+      })();
+
+      // fade-up on scroll
+      (function () {
+        var els = document.querySelectorAll('.fade-up');
+        if (!('IntersectionObserver' in window)) {
+          els.forEach(function (el) { el.classList.add('in'); });
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        els.forEach(function (el) { io.observe(el); });
+      })();
+
+      // FAQ accordion
+      (function () {
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+          var btn = item.querySelector('.faq-q');
+          var ans = item.querySelector('.faq-a');
+          if (!btn || !ans) return;
+          btn.addEventListener('click', function () {
+            var open = item.getAttribute('data-open') === 'true';
+            item.setAttribute('data-open', open ? 'false' : 'true');
+            ans.style.maxHeight = open ? '0px' : ans.scrollHeight + 'px';
+          });
+        });
+      })();
+
+      // Gallery lightbox
+      (function () {
+        var items = Array.prototype.slice.call(document.querySelectorAll('[data-gallery-img]'));
+        if (!items.length) return;
+        var lb = document.getElementById('lightbox');
+        var lbImg = document.getElementById('lightbox-img');
+        var idx = 0;
+        function show(i) {
+          idx = (i + items.length) % items.length;
+          lbImg.src = items[idx].src;
+          lbImg.alt = items[idx].alt || '';
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+        function hide() {
+          lb.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+        items.forEach(function (it, i) {
+          it.addEventListener('click', function () { show(i); });
+        });
+        document.getElementById('lb-close').addEventListener('click', hide);
+        document.getElementById('lb-prev').addEventListener('click', function () { show(idx - 1); });
+        document.getElementById('lb-next').addEventListener('click', function () { show(idx + 1); });
+        lb.addEventListener('click', function (e) { if (e.target === lb) hide(); });
+        document.addEventListener('keydown', function (e) {
+          if (!lb.classList.contains('open')) return;
+          if (e.key === 'Escape') hide();
+          if (e.key === 'ArrowLeft') show(idx - 1);
+          if (e.key === 'ArrowRight') show(idx + 1);
+        });
+      })();
+    </script>
+  </body>
+</html>

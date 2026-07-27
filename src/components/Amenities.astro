@@ -1,0 +1,32 @@
+---
+import Icon from './Icon.astro';
+
+const { messages: m } = Astro.props as { messages: any };
+const a = m.amenities;
+---
+
+<section class="amenities-section section-padding" id="amenities">
+  <div class="container fade-up">
+    <span class="eyebrow">{a.eyebrow}</span>
+    <h2 class="section-title">{a.title}</h2>
+    {a.subtitle && <p class="section-lead">{a.subtitle}</p>}
+
+    <div class="amenities-grid">
+      {a.items.map((it: any) => (
+        <div class="amenity">
+          <div class="am-ico"><Icon name={it.icon} /></div>
+          <div class="am-body">
+            <div class="am-head">
+              <h3>{it.k}</h3>
+              {it.badge && <span class="am-badge">{it.badge}</span>}
+            </div>
+            <p class="am-v">{it.v}</p>
+            {it.note && <p class="am-note">{it.note}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {a.disclaimer && <p class="amenities-disclaimer"><Icon name="info" size={15} /> {a.disclaimer}</p>}
+  </div>
+</section>

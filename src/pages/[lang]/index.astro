@@ -1,0 +1,45 @@
+---
+import { languagesList } from '../../i18n/ui';
+import { getI18n } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import InfoCard from '../../components/InfoCard.astro';
+import Intro from '../../components/Intro.astro';
+import History from '../../components/History.astro';
+import NightExperience from '../../components/NightExperience.astro';
+import DayNight from '../../components/DayNight.astro';
+import TravelGuide from '../../components/TravelGuide.astro';
+import MapSection from '../../components/MapSection.astro';
+import NearbyPlaces from '../../components/NearbyPlaces.astro';
+import Food from '../../components/Food.astro';
+import VisitorSummary from '../../components/VisitorSummary.astro';
+import Gallery from '../../components/Gallery.astro';
+import Amenities from '../../components/Amenities.astro';
+import Practical from '../../components/Practical.astro';
+import FAQ from '../../components/FAQ.astro';
+
+export function getStaticPaths() {
+  return languagesList.map((lang) => ({ params: { lang } }));
+}
+
+const { lang, messages: m, t } = getI18n(Astro.url);
+const props = { lang, messages: m, t };
+---
+
+<BaseLayout path="">
+  <Hero {...props} />
+  <InfoCard {...props} />
+  <Intro {...props} />
+  <History {...props} />
+  <NightExperience {...props} />
+  <DayNight {...props} />
+  <TravelGuide {...props} />
+  <MapSection {...props} />
+  <NearbyPlaces {...props} />
+  <Food {...props} />
+  <VisitorSummary {...props} />
+  <Amenities {...props} />
+  <Gallery {...props} />
+  <Practical {...props} />
+  <FAQ {...props} />
+</BaseLayout>

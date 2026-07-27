@@ -1,0 +1,57 @@
+---
+import Icon from './Icon.astro';
+
+const { messages: m } = Astro.props as { messages: any };
+const g = m.guide;
+---
+
+<section class="section-padding" id="guide">
+  <div class="container fade-up">
+    <span class="eyebrow">{g.eyebrow}</span>
+    <h2 class="section-title">{g.title}</h2>
+    {g.subtitle && <p class="section-lead">{g.subtitle}</p>}
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="gc-ico"><Icon name="clock" size={24} /></div>
+        <h3>{g.bestTime.label}</h3>
+        <div class="gv">{g.bestTime.value}</div>
+        <div class="gt">{g.bestTime.note}</div>
+      </div>
+      <div class="guide-card">
+        <div class="gc-ico"><Icon name="calendar" size={24} /></div>
+        <h3>{g.duration.label}</h3>
+        <div class="gv">{g.duration.value}</div>
+        <div class="gt">{g.duration.note}</div>
+      </div>
+    </div>
+
+    <div class="guide-card" style="margin-top:20px; max-width:520px;">
+      <div class="gc-ico"><Icon name="users" size={24} /></div>
+      <h3>{g.who.title}</h3>
+      <ul class="list-check">
+        {g.who.items.map((it: any) => (
+          <li>
+            <Icon name="check" size={22} />
+            <span>{it.text}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="guide-route">
+      <h3>{g.route.title}</h3>
+      <div class="route-steps">
+        {g.route.items.map((it: any) => (
+          <div class="route-step">
+            <div class="route-time">{it.time}</div>
+            <div class="route-line">
+              <span class="rt-dot"></span>
+              <p>{it.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

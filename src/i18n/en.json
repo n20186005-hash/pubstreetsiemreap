@@ -1,0 +1,827 @@
+{
+  "meta": {
+    "title": "Pub Street Siem Reap Cambodia — Nightlife Guide & Visitor Information",
+    "description": "Discover Pub Street in Siem Reap, Cambodia. Learn about its history, nightlife, food culture, location, travel tips and nearby attractions for an independent visitor guide."
+  },
+  "header": {
+    "siteName": "Pub Street",
+    "intro": "About",
+    "history": "History",
+    "night": "Nightlife",
+    "guide": "Visit",
+    "map": "Location",
+    "nearby": "Nearby",
+    "food": "Food",
+    "faq": "FAQ",
+    "facilities": "Facilities"
+  },
+  "common": {
+    "theme": "Toggle day / night theme"
+  },
+  "hero": {
+    "local": "ផាប់ស្ទ្រីត ក្រុងសៀមរាប",
+    "title": "Pub Street",
+    "tagline": "Discover the famous nightlife street in the heart of Siem Reap",
+    "sub": "A lively pedestrian hub of restaurants, bars, street food and Khmer hospitality — steps from the Old Market.",
+    "rating": "4.4",
+    "reviews": "7,182+",
+    "reviewsSuffix": "Google reviews",
+    "ctaExplore": "Explore Location",
+    "ctaMaps": "View Map",
+    "facts": [
+      {
+        "k": "Location",
+        "v": "Street 08, Siem Reap"
+      },
+      {
+        "k": "Type",
+        "v": "Nightlife Street"
+      },
+      {
+        "k": "Open",
+        "v": "24 hours"
+      },
+      {
+        "k": "Rating",
+        "v": "4.4 (7,182+)"
+      }
+    ]
+  },
+  "info": {
+    "eyebrow": "At a glance",
+    "title": "Basic Information",
+    "subtitle": "The key facts about Pub Street for planning your evening in Siem Reap.",
+    "items": [
+      {
+        "icon": "pin",
+        "k": "Location",
+        "v": "Street 08, Siem Reap"
+      },
+      {
+        "icon": "info",
+        "k": "Category",
+        "v": "Nightlife & dining street"
+      },
+      {
+        "icon": "clock",
+        "k": "Hours",
+        "v": "Open 24 hours"
+      },
+      {
+        "icon": "star",
+        "k": "Google Rating",
+        "v": "4.4 / 5"
+      },
+      {
+        "icon": "users",
+        "k": "Reviews",
+        "v": "7,182+"
+      },
+      {
+        "icon": "location",
+        "k": "Area",
+        "v": "Old Market district"
+      }
+    ]
+  },
+  "intro": {
+    "eyebrow": "About Pub Street",
+    "title": "What is Pub Street?",
+    "description": "Pub Street is the most famous nightlife area in Siem Reap, Cambodia. Tucked beside the Old Market (Phsar Chas) in the city center, it is where visitors gather after dark to eat, drink and enjoy the easygoing atmosphere of a Cambodian travel town.",
+    "facts": [
+      {
+        "icon": "location",
+        "k": "Where",
+        "v": "Old Market area, central Siem Reap"
+      },
+      {
+        "icon": "clock",
+        "k": "Open",
+        "v": "Pedestrian zone in the evening"
+      },
+      {
+        "icon": "star",
+        "k": "Rating",
+        "v": "4.4 (7,182+)"
+      },
+      {
+        "icon": "users",
+        "k": "Crowd",
+        "v": "Travelers & expats"
+      }
+    ],
+    "highlights": {
+      "title": "Why it matters",
+      "items": [
+        {
+          "text": "The best-known nightlife hub in Siem Reap."
+        },
+        {
+          "text": "Steps from the Old Market and the Siem Reap River."
+        },
+        {
+          "text": "Restaurants, bars, street food and shops in one place."
+        }
+      ]
+    },
+    "guide": {
+      "eyebrow": "At a glance",
+      "description": "A quick orientation before you go.",
+      "items": [
+        {
+          "text": "Free to walk around — no entry ticket."
+        },
+        {
+          "text": "Easily reached on foot from the city center."
+        },
+        {
+          "text": "Liveliest from around 18:00 to midnight."
+        },
+        {
+          "text": "Family-friendly earlier in the evening."
+        }
+      ]
+    }
+  },
+  "history": {
+    "eyebrow": "Background",
+    "title": "History & Culture",
+    "subtitle": "How a quiet riverside town grew into Cambodia's best-known travel nightlife district.",
+    "sections": [
+      {
+        "year": "1990s",
+        "era": "Before mass tourism",
+        "title": "A quiet riverside town",
+        "text": "Siem Reap was a small provincial town. The temples of Angkor were already famous, but visitor infrastructure was limited and nightlife was minimal."
+      },
+      {
+        "year": "2000s",
+        "era": "Tourism boom",
+        "title": "Pub Street takes shape",
+        "text": "As international arrivals grew, the strip near the Old Market transformed into restaurants and bars. The area became a pedestrian-friendly evening zone for visitors."
+      },
+      {
+        "year": "Today",
+        "era": "Modern hub",
+        "title": "Siem Reap's social heart",
+        "text": "Pub Street is now the city's gathering point after dark — live music, street performances and a blend of Khmer and traveler culture."
+      }
+    ],
+    "legendBadge": "More than a bar street",
+    "legendTitle": "A Small Tale",
+    "legendText": "Locals say there is an unwritten rule: after a day at the temples, every traveller returns to the old town at dusk to wash off the dust among lights and aromas. Over time, this short street between the Old Market and the river became the ritual “return to the human world” after pilgrimage. The story may not be in history books, but it explains why it anchors so many travel memories.",
+    "originTitle": "How the Name Came About",
+    "originText": "“Pub Street” (Khmer: ផ្លូវបារអាហារ / ផ្លូវហាងស្រា) literally means “bar street.” It is a short lane in Siem Reap’s old town known for dining and nightlife. The name comes from the many bars and restaurants clustered here; it is a local habit, not an official district name.",
+    "cultureTitle": "Local Culture & Stories",
+    "cultureText": "The street sits next to the Old Market (Phsar Chas). By day it is an ordinary alley for locals; after dark it becomes a pedestrian leisure zone for travellers. Its rise is tied to Angkor tourism: as world visitors grew, family workshops gave way to bars, street BBQ and world music. Artists, musicians and volunteers also meet here, making it Siem Reap’s “living room” where ancient Angkor meets modern travellers."
+  },
+  "night": {
+    "eyebrow": "After dark",
+    "title": "Night Experience",
+    "subtitle": "What makes an evening on Pub Street so memorable.",
+    "cards": [
+      {
+        "title": "Street Atmosphere",
+        "icon": "sparkle",
+        "tone": "",
+        "text": "When the lights come on, the street fills with people, music and the warm glow of restaurant signs. It is lively but relaxed — perfect for an evening stroll."
+      },
+      {
+        "title": "Local Food",
+        "icon": "food",
+        "tone": "",
+        "text": "From Khmer curries and BBQ to fried noodles, fruit shakes and sweets — the street is a casual open-air dining court for every budget."
+      },
+      {
+        "title": "Entertainment",
+        "icon": "music",
+        "tone": "red",
+        "text": "Bars, live acoustic music and street performances line the lane. You can sit with a drink, listen to a band or simply watch the crowd go by."
+      }
+    ]
+  },
+  "daynight": {
+    "eyebrow": "When to go",
+    "title": "Day vs Night",
+    "subtitle": "Pub Street changes character through the day. Here is what to expect.",
+    "compareTitle": "How the mood shifts",
+    "cards": [
+      {
+        "label": "Daytime",
+        "score": "Calm",
+        "tone": "morning",
+        "text": "Quiet and bright — good for photos, shopping and a relaxed walk before the crowds arrive."
+      },
+      {
+        "label": "Evening",
+        "score": "Warming up",
+        "tone": "evening",
+        "text": "Restaurants open and the first drinks appear. A relaxed, friendly vibe builds up."
+      },
+      {
+        "label": "Night",
+        "score": "Peak",
+        "tone": "night",
+        "text": "The busiest and most energetic time — music, lights and the fullest crowds."
+      }
+    ],
+    "note": "Tip: go after 18:00 for the true Pub Street feeling, but earlier in the evening is calmer and more family-friendly."
+  },
+  "guide": {
+    "eyebrow": "Plan your visit",
+    "title": "How to Visit Pub Street",
+    "subtitle": "Practical pointers to make the most of an evening here.",
+    "bestTime": {
+      "label": "Best time to go",
+      "value": "18:00 – 23:00",
+      "note": "Cooler air and the nightlife is in full swing."
+    },
+    "duration": {
+      "label": "Suggested stay",
+      "value": "1 – 3 hours",
+      "note": "Enough time to eat, drink and explore the lane."
+    },
+    "who": {
+      "title": "Who it's for",
+      "items": [
+        {
+          "text": "Backpackers"
+        },
+        {
+          "text": "Couples"
+        },
+        {
+          "text": "Friends & groups"
+        },
+        {
+          "text": "First-time visitors"
+        }
+      ]
+    },
+    "route": {
+      "title": "A simple evening plan",
+      "items": [
+        {
+          "time": "18:00",
+          "text": "Arrive and wander the lit street."
+        },
+        {
+          "time": "18:45",
+          "text": "Dinner at a Khmer or BBQ spot."
+        },
+        {
+          "time": "20:00",
+          "text": "Grab a drink and enjoy some live music."
+        },
+        {
+          "time": "21:30",
+          "text": "Stroll down to the riverside."
+        }
+      ]
+    }
+  },
+  "map": {
+    "eyebrow": "Getting there",
+    "title": "How To Get There",
+    "subtitle": "Pub Street is central and easy to reach from anywhere in Siem Reap.",
+    "addressLabel": "Address",
+    "addressValue": "Street 08, Krong Siem Reap, Cambodia",
+    "hoursLabel": "Opening hours",
+    "hoursValue": "Area open 24h; bars and restaurants from evening",
+    "openLabel": "Best for",
+    "openValue": "Evening walk & nightlife",
+    "ctaLabel": "Open in Google Maps",
+    "modes": [
+      {
+        "title": "From Siem Reap–Angkor International Airport",
+        "icon": "plane",
+        "text": "The airport is about 20–30 minutes by road from Pub Street. Taxis and tuk-tuks are available at the terminal.",
+        "steps": [
+          "Exit the arrivals hall and head to the official taxi / tuk-tuk counter or ride-hailing pick-up area.",
+          "Agree the fare before boarding (a taxi is usually more than a tuk-tuk, which is the local open-air option).",
+          "Follow National Road 6 toward the city center, then turn toward the Old Market (Phsar Chas) area.",
+          "Ask the driver to drop you at 'Pub Street' or the Old Market — they are adjacent and well known."
+        ]
+      },
+      {
+        "title": "From Angkor Wat",
+        "icon": "car",
+        "text": "Pub Street sits about 7 km north of the temple area; a short tuk-tuk ride brings you back into town.",
+        "steps": [
+          "After your temple visit, find a tuk-tuk near the Angkor ticket checkpoint or main entrance.",
+          "Show the driver 'Pub Street / Old Market' — most drivers know it by name.",
+          "The ride heads south into central Siem Reap and takes roughly 15–20 minutes depending on traffic."
+        ]
+      },
+      {
+        "title": "Around the city center",
+        "icon": "walk",
+        "text": "Pub Street is compact and walkable from most central hotels and the riverside.",
+        "steps": [
+          "From the Old Market (Phsar Chas), walk one block east — Pub Street is right beside it.",
+          "From the Siem Reap River promenade, head one block inland (west) toward the Old Market.",
+          "At night the street becomes a pedestrian zone, so simply follow the lights and music."
+        ]
+      }
+    ]
+  },
+  "nearby": {
+    "eyebrow": "Around the area",
+    "title": "Nearby Attractions",
+    "subtitle": "Worth exploring before or after your evening on Pub Street.",
+    "places": [
+      {
+        "name": "Old Market (Phsar Chas)",
+        "distance": "Few min walk",
+        "text": "A traditional market for souvenirs, snacks and local life, right beside Pub Street."
+      },
+      {
+        "name": "Angkor Night Market",
+        "distance": "5 min walk",
+        "text": "A nighttime shopping area with handicrafts, clothes and street food stalls."
+      },
+      {
+        "name": "Siem Reap Riverside",
+        "distance": "5 min walk",
+        "text": "A calm promenade along the river — nice for a post-dinner walk."
+      },
+      {
+        "name": "Angkor Wat",
+        "distance": "≈ 7 km",
+        "text": "The world-famous temple complex and Cambodia's top heritage site, a short trip north."
+      }
+    ]
+  },
+  "food": {
+    "eyebrow": "Taste of the street",
+    "title": "Food Around Pub Street",
+    "subtitle": "",
+    "intro": "Pub Street is a great place to sample Cambodian flavors in a relaxed, casual setting. These are some dishes you will commonly find — presented as cultural context, not restaurant recommendations.",
+    "items": [
+      {
+        "name": "Amok",
+        "text": "A gentle Khmer curry steamed in banana leaf, often with fish and coconut."
+      },
+      {
+        "name": "Khmer BBQ",
+        "text": "Grilled meats and vegetables, sometimes cooked at your table."
+      },
+      {
+        "name": "Fried noodles",
+        "text": "Quick, cheap and filling — a backpacker staple across the street."
+      },
+      {
+        "name": "Fruit shakes",
+        "text": "Fresh blended tropical fruit drinks, perfect in the warm evening."
+      },
+      {
+        "name": "Cambodian desserts",
+        "text": "Sweet sticky-rice, custards and palm-sugar treats from small stalls."
+      }
+    ]
+  },
+  "reviews": {
+    "eyebrow": "Visitor feedback",
+    "title": "Visitor Experience Summary",
+    "subtitle": "A balanced look at what travelers commonly say — based on public review trends, not copied comments.",
+    "prosTitle": "What visitors love",
+    "consTitle": "Good to know",
+    "pros": [
+      {
+        "text": "Lively, friendly atmosphere that is easy to enjoy."
+      },
+      {
+        "text": "Central and walkable, close to the Old Market."
+      },
+      {
+        "text": "Great for an evening stroll and people-watching."
+      }
+    ],
+    "cons": [
+      {
+        "text": "Crowded at peak hours (evenings and weekends)."
+      },
+      {
+        "text": "Quite commercial compared with the rest of the city."
+      }
+    ],
+    "rating": "4.4",
+    "count": "Based on 7,182+ Google reviews"
+  },
+  "practical": {
+    "eyebrow": "Before You Go",
+    "title": "Practical Tips",
+    "subtitle": "Neutral advice for independent travellers to plan with more ease.",
+    "cards": [
+      {
+        "icon": "shield",
+        "title": "Stay aware",
+        "text": "It is a popular tourist area. Keep normal travel caution with belongings."
+      },
+      {
+        "icon": "walk",
+        "title": "Getting around",
+        "text": "Walk or take a tuk-tuk. The area is central and compact."
+      },
+      {
+        "icon": "coffee",
+        "title": "Money",
+        "text": "Cash is handy for small stalls; many bars and restaurants take cards."
+      },
+      {
+        "icon": "clock",
+        "title": "Timing",
+        "text": "Arrive after 18:00 for the full lights-and-music experience."
+      }
+    ],
+    "items": [
+      {
+        "icon": "clock",
+        "k": "Best Time",
+        "v": "Liveliest from lighting-up to midnight; for a quiet stroll, go afternoon to before sunset."
+      },
+      {
+        "icon": "walk",
+        "k": "Walkable",
+        "v": "A pedestrian leisure zone, best on foot; alleys connect, watch your belongings."
+      },
+      {
+        "icon": "atm",
+        "k": "Payment",
+        "v": "Most places take cash and major e-payments; small cash helps bargaining and tips."
+      },
+      {
+        "icon": "shield",
+        "k": "Safety",
+        "v": "Generally safe; guard belongings, drink responsibly, mind night traffic and steps."
+      },
+      {
+        "icon": "globe",
+        "k": "Language",
+        "v": "English is widely used in the tourist area; a few Khmer greetings go a long way."
+      },
+      {
+        "icon": "users",
+        "k": "Families & Access",
+        "v": "Good for families by day; at night it is crowded and loud—plan accordingly if with infants or needing quiet."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "In pictures",
+    "title": "Pub Street Gallery",
+    "subtitle": "A glimpse of the street, its food and its night-life energy.",
+    "ctaLabel": "View on Google Maps",
+    "images": [
+      {
+        "file": "pub-street-siem-reap-1.jpg",
+        "caption": "Night Street",
+        "span": "gallery-span-2"
+      },
+      {
+        "file": "pub-street-siem-reap-2.jpg",
+        "caption": "Local Life",
+        "span": "gallery-span-3"
+      },
+      {
+        "file": "pub-street-siem-reap-3.jpg",
+        "caption": "Food Culture",
+        "span": "gallery-span-3"
+      },
+      {
+        "file": "pub-street-siem-reap-4.jpg",
+        "caption": "Street View",
+        "span": "gallery-span-2"
+      },
+      {
+        "file": "pub-street-siem-reap-5.jpg",
+        "caption": "Night Street",
+        "span": "gallery-span-2"
+      },
+      {
+        "file": "pub-street-siem-reap-6.jpg",
+        "caption": "Local Life",
+        "span": "gallery-span-3"
+      },
+      {
+        "file": "pub-street-siem-reap-7.jpg",
+        "caption": "Food Culture",
+        "span": "gallery-span-3"
+      },
+      {
+        "file": "pub-street-siem-reap-8.jpg",
+        "caption": "Street View",
+        "span": "gallery-span-2"
+      },
+      {
+        "file": "pub-street-siem-reap-9.jpg",
+        "caption": "Night Street",
+        "span": "gallery-span-2"
+      },
+      {
+        "file": "pub-street-siem-reap-10.jpg",
+        "caption": "Local Life",
+        "span": "gallery-span-3"
+      },
+      {
+        "file": "pub-street-siem-reap-11.jpg",
+        "caption": "Food Culture",
+        "span": "gallery-span-3"
+      },
+      {
+        "file": "pub-street-siem-reap-12.jpg",
+        "caption": "Street View",
+        "span": "gallery-span-2"
+      },
+      {
+        "file": "pub-street-siem-reap-13.jpg",
+        "caption": "Night Street",
+        "span": "gallery-span-2"
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions",
+    "title": "Frequently Asked Questions",
+    "subtitle": "Quick answers for first-time visitors.",
+    "items": [
+      {
+        "q": "Is Pub Street open 24 hours?",
+        "a": "The street area is accessible any time, but restaurants and nightlife operate mainly in the evening. The surrounding lanes are open around the clock."
+      },
+      {
+        "q": "Is Pub Street safe?",
+        "a": "It is generally a popular, well-visited tourist area. Visitors should keep normal travel awareness — watch belongings and use licensed tuk-tuks."
+      },
+      {
+        "q": "How long should I spend there?",
+        "a": "Usually 1–3 hours is enough to eat, drink and explore the lane at a relaxed pace."
+      },
+      {
+        "q": "Is Pub Street suitable for families?",
+        "a": "Yes — early evening is the most suitable time for families, before the crowds and late-night energy peak."
+      }
+    ]
+  },
+  "legal": {
+    "backToSite": "← Back to site",
+    "cookieSettingsLink": "Cookie Settings",
+    "privacy": {
+      "title": "Privacy Policy",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        {
+          "heading": "Information we collect",
+          "body": "We only collect the minimum data necessary to provide our service. This may include:",
+          "items": [
+            "Browsing data (IP address, browser type, pages visited)",
+            "Cookies and similar technologies",
+            "Any information you voluntarily provide through a contact form or email"
+          ]
+        },
+        {
+          "heading": "How we use your information",
+          "body": "We use the information we collect to:",
+          "items": [
+            "Improve website content and user experience",
+            "Analyze traffic and usage patterns",
+            "Respond to requests",
+            "Comply with our legal obligations"
+          ]
+        },
+        {
+          "heading": "Third-party services",
+          "body": "Our website may use third-party services such as Google Maps (for embedded maps and location data), Google Analytics (for traffic analysis), and Unsplash (for images). These services have their own privacy policies.",
+          "items": []
+        },
+        {
+          "heading": "Your rights",
+          "body": "Under the General Data Protection Regulation (GDPR) and related laws, you have the following rights:",
+          "items": [
+            "Access your personal data",
+            "Request correction or deletion",
+            "Object to processing",
+            "Lodge a complaint with a supervisory authority"
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "updated": "Last updated: July 2026",
+      "sections": [
+        {
+          "heading": "Access and use",
+          "body": "By accessing and using this website, you agree to be bound by these Terms of Service.",
+          "items": []
+        },
+        {
+          "heading": "Content use",
+          "body": "All content on this website is for informational purposes only. We are an independent third-party travel information website and are not affiliated with any tourist attraction, government agency, or commercial operator.",
+          "items": []
+        },
+        {
+          "heading": "Accuracy of information",
+          "body": "We strive to provide accurate and up-to-date information, but cannot guarantee its completeness or accuracy. Itineraries, conditions, and services are subject to change without notice. Always verify important information through official channels before traveling.",
+          "items": []
+        },
+        {
+          "heading": "Intellectual property",
+          "body": "The design and original content of this website are protected by copyright. Images are from Unsplash and used under their license. Use of Google Maps data complies with Google's Terms of Service.",
+          "items": []
+        },
+        {
+          "heading": "Limitation of liability",
+          "body": "This website is provided \"as is\" without any warranties. We are not responsible for any loss arising from the use of information on this website, including but not limited to travel decisions based on its content.",
+          "items": []
+        }
+      ]
+    },
+    "cookie": {
+      "title": "Cookie Settings",
+      "updated": "Last updated: July 2026",
+      "intro": "We use cookies to improve your browsing experience. You can manage your preferences below.",
+      "categories": [
+        {
+          "name": "Necessary Cookies",
+          "desc": "These cookies are essential for the website to function and cannot be disabled.",
+          "status": "Always active",
+          "state": "always",
+          "note": ""
+        },
+        {
+          "name": "Analytics Cookies",
+          "desc": "They help us understand how visitors interact with our website by collecting anonymous usage data.",
+          "status": "Google Analytics",
+          "state": "on",
+          "note": "It collects anonymous information about how visitors use our website."
+        },
+        {
+          "name": "Preference Cookies",
+          "desc": "They remember your settings, such as language and theme preferences.",
+          "status": "User preferences",
+          "state": "on",
+          "note": "Saves your language preference and site settings."
+        },
+        {
+          "name": "Marketing Cookies",
+          "desc": "They are used to display relevant ads and measure the effectiveness of ad campaigns.",
+          "status": "Personalized ads",
+          "state": "off",
+          "note": "It may show you relevant ads based on your interests."
+        }
+      ],
+      "manageTitle": "Consent management",
+      "manageText": "You can change your cookie settings at any time. Please note that disabling certain cookies may affect website functionality.",
+      "save": "Save preferences",
+      "rejectAll": "Reject all"
+    }
+  },
+  "footer": {
+    "siteName": "Pub Street",
+    "tagline": "An independent, non-profit visitor guide to Siem Reap's most famous nightlife street — built from public information, not hotel or booking promotions.",
+    "missionTitle": "Our mission",
+    "missionText": "To share clear, neutral and multilingual travel knowledge about Cambodia's attractions, so visitors can explore with confidence.",
+    "exploreTitle": "Explore",
+    "exploreLinks": [
+      {
+        "label": "About",
+        "href": "#intro"
+      },
+      {
+        "label": "History",
+        "href": "#history"
+      },
+      {
+        "label": "Nightlife",
+        "href": "#night"
+      },
+      {
+        "label": "Visit tips",
+        "href": "#guide"
+      },
+      {
+        "label": "Location",
+        "href": "#map"
+      },
+      {
+        "label": "Nearby",
+        "href": "#nearby"
+      },
+      {
+        "label": "Food",
+        "href": "#food"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "resourcesTitle": "Public sources",
+    "resources": [
+      {
+        "name": "Google Maps",
+        "note": "POI & location data",
+        "url": "https://www.google.com/maps?q=13.3531,103.8562"
+      },
+      {
+        "name": "OpenStreetMap",
+        "note": "Open geographic data",
+        "url": "https://www.openstreetmap.org/#map=17/13.3531/103.8562"
+      },
+      {
+        "name": "Angkor & UNESCO",
+        "note": "Heritage context",
+        "url": "https://whc.unesco.org/en/list/668/"
+      },
+      {
+        "name": "Visit Cambodia",
+        "note": "Official tourism info",
+        "url": "https://www.tourismcambodia.org/"
+      }
+    ],
+    "visitTitle": "Visit",
+    "addressLabel": "Address",
+    "addressValue": "Street 08, Krong Siem Reap, Cambodia",
+    "hoursLabel": "Hours",
+    "hoursValue": "Open 24 hours",
+    "mapsLabel": "View on Google Maps",
+    "rights": "© 2026 Pub Street Guide. Non-profit travel information.",
+    "disclaimer": "Independent guide; not affiliated with any business on Pub Street.",
+    "declaration": {
+      "org": "This website is an independent, non-profit visitor information project and is not affiliated with any government agency or official organization. Attraction information has been cross-checked against public materials from the Siem Reap City Hall, the Siem Reap Provincial Department of Tourism, and the Ministry of Tourism of Cambodia. It contains no commercial recommendations.",
+      "image": "All images displayed on this website are the property of their respective original photographers and are protected by copyright."
+    }
+  },
+  "amenities": {
+    "eyebrow": "Facilities & Services",
+    "title": "Nearby Facilities & Services",
+    "subtitle": "Listed to help you plan your visit. We describe only the type and general availability of services, and do not endorse any specific business. Verify locations and opening hours on site before your visit.",
+    "items": [
+      {
+        "icon": "restroom",
+        "k": "Public Restrooms",
+        "v": "Restrooms are available in restaurants, cafés and shopping venues along the street; some public areas have paid facilities.",
+        "badge": "Common",
+        "note": "Prefer facilities inside dining venues; open-air options are limited at night."
+      },
+      {
+        "icon": "parking",
+        "k": "Parking",
+        "v": "Several open-air lots and hotel valet parking exist nearby; spaces around the Old Market get tight in the evening.",
+        "badge": "Limited",
+        "note": "At peak hours, park a bit further and walk, or use other transport."
+      },
+      {
+        "icon": "food",
+        "k": "Dining",
+        "v": "Mostly bars, restaurants, BBQ stalls and street food, covering Khmer, Asian and international cuisines.",
+        "badge": "Abundant",
+        "note": "Choose by budget and cuisine; check public reviews rather than a specific name."
+      },
+      {
+        "icon": "bed",
+        "k": "Accommodation",
+        "v": "From hostels and boutique hotels to upscale resorts, concentrated around the Old Market and west riverbank.",
+        "badge": "Abundant",
+        "note": "Pick by budget and quietness; street-facing rooms can be lively at night."
+      },
+      {
+        "icon": "shop",
+        "k": "Convenience & Shops",
+        "v": "Within walking distance: convenience stores, groceries and souvenir markets for daily needs, drinks and small items.",
+        "badge": "Common",
+        "note": "The night market near the Old Market is best for souvenirs."
+      },
+      {
+        "icon": "fuel",
+        "k": "Fuel & Charging",
+        "v": "Fuel stations are spread across the city; EV and phone charging are available at hotels, cafés and malls.",
+        "badge": "Citywide",
+        "note": "If renting a vehicle, top up before long trips."
+      },
+      {
+        "icon": "atm",
+        "k": "ATM & Currency",
+        "v": "ATMs and money changers near main streets and malls accept major cards.",
+        "badge": "Common",
+        "note": "Prefer ATMs inside bank branches; mind cross-border fees."
+      },
+      {
+        "icon": "medical",
+        "k": "Medical & Emergency",
+        "v": "Pharmacies, clinics and international medical points are in the city; contact local ambulance and tourist police in emergencies.",
+        "badge": "Citywide",
+        "note": "Get travel insurance and save embassy contacts."
+      },
+      {
+        "icon": "wifi",
+        "k": "Connectivity",
+        "v": "Most dining and lodging offer free Wi-Fi; tourist SIM cards are sold at local kiosks.",
+        "badge": "Ubiquitous",
+        "note": "Be careful with public networks in crowded areas."
+      }
+    ],
+    "disclaimer": "This is an independent non-profit guide. Listed facilities are type references only and are not commercial endorsements; on-site conditions apply."
+  }
+}

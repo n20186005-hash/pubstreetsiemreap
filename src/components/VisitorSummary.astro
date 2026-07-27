@@ -1,0 +1,41 @@
+---
+import Icon from './Icon.astro';
+
+const { messages: m } = Astro.props as { messages: any };
+const rev = m.reviews;
+---
+
+<section class="section-padding" id="reviews">
+  <div class="container fade-up">
+    <span class="eyebrow">{rev.eyebrow}</span>
+    <h2 class="section-title">{rev.title}</h2>
+    {rev.subtitle && <p class="section-lead">{rev.subtitle}</p>}
+
+    <div class="summary-grid">
+      <div class="summary-card pros">
+        <h3><Icon name="check" size={22} /> {rev.prosTitle}</h3>
+        <ul>
+          {rev.pros.map((it: any) => (
+            <li><Icon name="check" size={22} /><span>{it.text}</span></li>
+          ))}
+        </ul>
+      </div>
+      <div class="summary-card cons">
+        <h3><Icon name="warning" size={22} /> {rev.consTitle}</h3>
+        <ul>
+          {rev.cons.map((it: any) => (
+            <li><Icon name="warning" size={22} /><span>{it.text}</span></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="summary-rating">
+      <span class="stars" aria-hidden="true">
+        {Array.from({ length: 5 }).map(() => <Icon name="star" size={18} />)}
+      </span>
+      <span class="num">{rev.rating}</span>
+      <span class="rev" style="color:var(--text-muted);font-size:0.9rem;">{rev.count}</span>
+    </div>
+  </div>
+</section>

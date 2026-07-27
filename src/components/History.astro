@@ -1,0 +1,46 @@
+---
+const { messages: m } = Astro.props as { messages: any };
+const hist = m.history;
+---
+
+<section class="history-section section-padding" id="history">
+  <div class="container fade-up">
+    <span class="eyebrow">{hist.eyebrow}</span>
+    <h2 class="section-title">{hist.title}</h2>
+    {hist.subtitle && <p class="section-lead">{hist.subtitle}</p>}
+
+    <div class="timeline">
+      {hist.sections.map((s: any) => (
+        <div class="tl-item">
+          <div class="tl-marker">{s.year}</div>
+          <div class="tl-content">
+            <span class="tl-era">{s.era}</span>
+            <h3>{s.title}</h3>
+            <p>{s.text}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="legend-card">
+      <span class="legend-badge">{hist.legendBadge}</span>
+      <h3>{hist.legendTitle}</h3>
+      <p>{hist.legendText}</p>
+    </div>
+
+    <div class="history-extra">
+      <div class="he-block">
+        <h3>{hist.originTitle}</h3>
+        <p>{hist.originText}</p>
+      </div>
+      <div class="he-block">
+        <h3>{hist.cultureTitle}</h3>
+        <p>{hist.cultureText}</p>
+      </div>
+      <div class="he-block he-legend">
+        <h3>{hist.legendTitle}</h3>
+        <p>{hist.legendText}</p>
+      </div>
+    </div>
+  </div>
+</section>

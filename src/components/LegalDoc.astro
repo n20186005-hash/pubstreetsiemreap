@@ -1,0 +1,71 @@
+---
+const { messages: m, lang } = Astro.props as { lang: string; messages: any; t: (k: string) => string };
+const legal = m.legal;
+const page = Astro.props.page as 'privacy' | 'terms' | 'cookie';
+const doc = legal[page];
+const stateLabel: Record<string, string> = { always: 'always', on: 'on', off: 'off' };
+---
+
+<article class="legal-doc container fade-up">
+  <a class="legal-back" href={`/${lang}`}>{legal.backToSite}</a>
+
+  <h1 class="legal-title">{doc.title}</h1>
+  <p class="legal-updated">{doc.updated}</p>
+
+  {page === 'cookie' ? (
+    <>
+      <p class="legal-lead">{doc.intro}</p>
+      <div class="cookie-cats">
+        {doc.categories.map((c: any) => (
+          <div class={`cookie-cat state-${c.state}`}>
+            <div class="cookie-cat-head">
+              <h3>{c.name}</h3>
+              <span class={`cookie-badge badge-${c.state}`}>{c.status}</span>
+            </div>
+            <p class="cookie-cat-desc">{c.desc}</p>
+            {c.note && <p class="cookie-cat-note">{c.note}</p>}
+          </div>
+        ))}
+      </div>
+      <div class="cookie-manage">
+        <h3>{doc.manageTitle}</h3>
+        <p>{doc.manageText}</p>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" class="btn-cta btn-cta-primary" id="cookie-save">{doc.save}</button>
+        <button type="button" class="btn-cta btn-cta-ghost" id="cookie-reject">{doc.rejectAll}</button>
+      </div>
+    </>
+  ) : (
+    doc.sections.map((s: any) => (
+      <section class="legal-section">
+        <h2>{s.heading}</h2>
+        {s.body && <p>{s.body}</p>}
+        {s.items && s.items.length > 0 && (
+          <ul>
+            {s.items.map((it: string) => <li>{it}</li>)}
+          </ul>
+        )}
+      </section>
+    ))
+  )}
+</article>
+
+<script is:inline>
+  (function () {
+    var save = document.getElementById('cookie-save');
+    var reject = document.getElementById('cookie-reject');
+    if (save) save.addEventListener('click', function () {
+      try {
+        localStorage.setItem('cookie-consent', JSON.stringify({ necessary: true, analytics: true, preference: true, marketing: true }));
+      } catch (e) {}
+      save.textContent = '✓';
+    });
+    if (reject) reject.addEventListener('click', function () {
+      try {
+        localStorage.setItem('cookie-consent', JSON.stringify({ necessary: true, analytics: false, preference: false, marketing: false }));
+      } catch (e) {}
+      reject.textContent = '✓';
+    });
+  })();
+</script>
