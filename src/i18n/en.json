@@ -19,7 +19,7 @@
     "theme": "Toggle day / night theme"
   },
   "hero": {
-    "local": "ផាប់ស្ទ្រីត ក្រុងសៀមរាប",
+    "local": "Pub Street · Street 08",
     "title": "Pub Street",
     "tagline": "Discover the famous nightlife street in the heart of Siem Reap",
     "sub": "A lively pedestrian hub of restaurants, bars, street food and Khmer hospitality — steps from the Old Market.",
@@ -30,20 +30,24 @@
     "ctaMaps": "View Map",
     "facts": [
       {
-        "k": "Location",
-        "v": "Street 08, Siem Reap"
+        "icon": "ticket",
+        "k": "Entry",
+        "v": "Free"
       },
       {
-        "k": "Type",
-        "v": "Nightlife Street"
+        "icon": "clock",
+        "k": "Best time",
+        "v": "18:00 – 23:00"
       },
       {
-        "k": "Open",
-        "v": "24 hours"
+        "icon": "location",
+        "k": "To Angkor Wat",
+        "v": "~7 km (15 min)"
       },
       {
-        "k": "Rating",
-        "v": "4.4 (7,182+)"
+        "icon": "walk",
+        "k": "Getting there",
+        "v": "Tuk-tuk / Walk"
       }
     ]
   },
@@ -152,28 +156,40 @@
         "year": "1990s",
         "era": "Before mass tourism",
         "title": "A quiet riverside town",
-        "text": "Siem Reap was a small provincial town. The temples of Angkor were already famous, but visitor infrastructure was limited and nightlife was minimal."
+        "text": "In the 1990s, Siem Reap was still a quiet small town on the Tonlé Sap river. Angkor Wat was already world-famous, but tourist infrastructure was thin and there was barely any nightlife."
+      },
+      {
+        "year": "1998",
+        "era": "Backpacker era",
+        "title": "The first bar opens",
+        "text": "In 1998, Angkor What? Bar — a modern bar for backpackers — opened at the corner of the street. It became the seed of Pub Street's nightlife and marked the turn from an ordinary residential lane into a cluster of bars."
+      },
+      {
+        "year": "2000",
+        "era": "Film effect",
+        "title": "The Tomb Raider effect",
+        "text": "When the 2000 Hollywood film Tomb Raider was shot in Siem Reap, its star Angelina Jolie often visited The Red Piano bar at the street corner. International media attention quickly lifted Pub Street from a backpacker secret into a globally known landmark."
       },
       {
         "year": "2000s",
-        "era": "Tourism boom",
-        "title": "Pub Street takes shape",
-        "text": "As international arrivals grew, the strip near the Old Market transformed into restaurants and bars. The area became a pedestrian-friendly evening zone for visitors."
+        "era": "City landmark",
+        "title": "The pedestrian street forms",
+        "text": "As visitor numbers surged, the Siem Reap authorities designated Street 08 as a night pedestrian zone in the mid-2000s — laying asphalt and adding signature lanterns, transforming an ordinary alley into a city landmark."
       },
       {
         "year": "Today",
         "era": "Modern hub",
         "title": "Siem Reap's social heart",
-        "text": "Pub Street is now the city's gathering point after dark — live music, street performances and a blend of Khmer and traveler culture."
+        "text": "Today Pub Street is the city's after-dark gathering point — live music, street performances and a blend of Khmer culture with traveler cultures from around the world."
       }
     ],
     "legendBadge": "More than a bar street",
     "legendTitle": "A Small Tale",
-    "legendText": "Locals say there is an unwritten rule: after a day at the temples, every traveller returns to the old town at dusk to wash off the dust among lights and aromas. Over time, this short street between the Old Market and the river became the ritual “return to the human world” after pilgrimage. The story may not be in history books, but it explains why it anchors so many travel memories.",
+    "legendText": "Locals say there is an unwritten rule: after a day at the temples, every traveller returns to the old town at dusk to wash off the dust among lights and aromas. Over time, this short street between the Old Market and the river became the ritual 'return to the human world' after pilgrimage. The story may not be in history books, but it explains why it anchors so many travel memories.",
     "originTitle": "How the Name Came About",
-    "originText": "“Pub Street” (Khmer: ផ្លូវបារអាហារ / ផ្លូវហាងស្រា) literally means “bar street.” It is a short lane in Siem Reap’s old town known for dining and nightlife. The name comes from the many bars and restaurants clustered here; it is a local habit, not an official district name.",
-    "cultureTitle": "Local Culture & Stories",
-    "cultureText": "The street sits next to the Old Market (Phsar Chas). By day it is an ordinary alley for locals; after dark it becomes a pedestrian leisure zone for travellers. Its rise is tied to Angkor tourism: as world visitors grew, family workshops gave way to bars, street BBQ and world music. Artists, musicians and volunteers also meet here, making it Siem Reap’s “living room” where ancient Angkor meets modern travellers."
+    "originText": "'Pub Street' (Khmer: ផ្លូវបារអាហារ / ផ្លូវហាងស្រា) literally means 'bar street.' It is a short lane in Siem Reap's old town known for dining and nightlife. The name comes from the many bars and restaurants clustered here; it is a local habit, not an official district name.",
+    "cultureTitle": "By Day a Pilgrimage, By Night Back to Earth",
+    "cultureText": "In Siem Reap's travel culture there is an unspoken understanding: by day, travellers climb and contemplate in the solemn silence of the Angkor temples until they are spent; at dusk they return to Pub Street in the old town, shedding the dust and fatigue of the day amid bright lights, cold beer and street music. This sharp contrast — 'paying respects to the ancient temples by day, returning to the human world by night' — gives Pub Street an emotional symbol that goes beyond an ordinary commercial street. It is not just a nightlife district, but the 'city living room' where cultures from around the world meet in Siem Reap."
   },
   "night": {
     "eyebrow": "After dark",
@@ -259,23 +275,23 @@
       ]
     },
     "route": {
-      "title": "A simple evening plan",
+      "title": "A 1-hour evening walk",
       "items": [
         {
-          "time": "18:00",
-          "text": "Arrive and wander the lit street."
+          "time": "17:30",
+          "text": "Catch the sunset and browse stalls at the Old Market (Phsar Chas)."
         },
         {
-          "time": "18:45",
-          "text": "Dinner at a Khmer or BBQ spot."
+          "time": "18:30",
+          "text": "Step into Pub Street for a Khmer or BBQ dinner."
         },
         {
           "time": "20:00",
-          "text": "Grab a drink and enjoy some live music."
+          "text": "Grab a street shake or local beer and soak up the live music and snacks."
         },
         {
-          "time": "21:30",
-          "text": "Stroll down to the riverside."
+          "time": "21:00",
+          "text": "Stroll to the Siem Reap riverside night market to wind down by the water."
         }
       ]
     }
@@ -316,7 +332,7 @@
       {
         "title": "Around the city center",
         "icon": "walk",
-        "text": "Pub Street is compact and walkable from most central hotels and the riverside.",
+        "text": "Pub Street is compact and walkable from most central hotels and the riverside. For the ride back at night, use ride apps like Grab or PassApp — transparent pricing, no haggling markups.",
         "steps": [
           "From the Old Market (Phsar Chas), walk one block east — Pub Street is right beside it.",
           "From the Siem Reap River promenade, head one block inland (west) toward the Old Market.",
@@ -432,6 +448,16 @@
         "icon": "clock",
         "title": "Timing",
         "text": "Arrive after 18:00 for the full lights-and-music experience."
+      },
+      {
+        "icon": "car",
+        "title": "Ride Apps (Grab / PassApp)",
+        "text": "Besides negotiating tuk-tuk fares on the spot, use popular local ride apps like Grab or PassApp for transparent pricing and tracked trips, avoiding inflated night fares."
+      },
+      {
+        "icon": "handshake",
+        "title": "Responsible travel",
+        "text": "Do not buy from or give money to children selling or begging on the street at night, to support their return to school (echoing UNICEF and NGO initiatives); beware of the 'milk scam' near the Old Market–Pub Street junction and politely decline unsolicited donation requests."
       }
     ],
     "items": [
@@ -475,67 +501,67 @@
     "images": [
       {
         "file": "pub-street-siem-reap-1.jpg",
-        "caption": "Night Street",
+        "caption": "Night Street Scene",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-2.jpg",
-        "caption": "Local Life",
+        "caption": "Khmer Life",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-3.jpg",
-        "caption": "Food Culture",
+        "caption": "Local Food",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-4.jpg",
-        "caption": "Street View",
+        "caption": "Street Art",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-5.jpg",
-        "caption": "Night Street",
+        "caption": "Night Street Scene",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-6.jpg",
-        "caption": "Local Life",
+        "caption": "Khmer Life",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-7.jpg",
-        "caption": "Food Culture",
+        "caption": "Local Food",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-8.jpg",
-        "caption": "Street View",
+        "caption": "Street Art",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-9.jpg",
-        "caption": "Night Street",
+        "caption": "Night Street Scene",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-10.jpg",
-        "caption": "Local Life",
+        "caption": "Khmer Life",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-11.jpg",
-        "caption": "Food Culture",
+        "caption": "Local Food",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-12.jpg",
-        "caption": "Street View",
+        "caption": "Street Art",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-13.jpg",
-        "caption": "Night Street",
+        "caption": "Night Street Scene",
         "span": "gallery-span-2"
       }
     ]
@@ -722,7 +748,7 @@
       {
         "name": "Google Maps",
         "note": "POI & location data",
-        "url": "https://www.google.com/maps?q=13.3531,103.8562"
+        "url": "https://maps.app.goo.gl/SyrmDeMYGeWN3JWNA"
       },
       {
         "name": "OpenStreetMap",

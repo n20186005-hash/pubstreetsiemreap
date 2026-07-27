@@ -34,9 +34,12 @@ const map = m.map;
       <div class="map-container">
         <iframe
           src={mapsEmbedSrc}
+          width="600"
+          height="450"
+          style="border:0;"
           title={map.title}
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerpolicy="strict-origin-when-cross-origin"
           allowfullscreen
         ></iframe>
       </div>

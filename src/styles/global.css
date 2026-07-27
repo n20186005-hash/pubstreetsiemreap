@@ -244,10 +244,10 @@ img { max-width: 100%; display: block; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(900px 500px at 75% 20%, rgba(245, 158, 11, 0.28), transparent 60%),
-    radial-gradient(700px 420px at 15% 80%, rgba(239, 68, 68, 0.22), transparent 60%),
-    linear-gradient(180deg, #0b101b 0%, #111827 55%, #0b101b 100%);
+  background-image: url('/gallery/pub-street-siem-reap-13.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
   z-index: 0;
 }
 .hero-bg::after {
@@ -404,12 +404,14 @@ img { max-width: 100%; display: block; }
 .guide-card .gt { color: var(--text-muted); font-size: 0.92rem; margin-top: 4px; }
 .guide-route { margin-top: 28px; background: var(--surface-accent); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px 26px; }
 .guide-route h3 { margin: 0 0 16px; font-size: 1.3rem; }
-.route-steps { display: grid; gap: 14px; }
-.route-step { display: grid; grid-template-columns: 56px 1fr; gap: 14px; align-items: center; }
-.route-time { font-weight: 800; color: var(--accent-strong); font-family: var(--font-display); }
-.route-line { display: flex; align-items: center; gap: 12px; }
-.route-line .rt-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); flex: none; box-shadow: 0 0 0 4px var(--accent-soft); }
-.route-line p { margin: 0; color: var(--text); }
+.route-steps { display: grid; gap: 0; margin-top: 6px; }
+.route-step { display: grid; grid-template-columns: 78px 1fr; gap: 14px; }
+.route-time { font-weight: 800; color: var(--accent-strong); font-family: var(--font-display); font-size: 1.05rem; padding-top: 2px; white-space: nowrap; }
+.route-body { position: relative; padding-left: 28px; padding-bottom: 22px; }
+.route-body::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 0; width: 2px; background: var(--border-strong); }
+.route-step:last-child .route-body::before { display: none; }
+.route-dot { position: absolute; left: 0; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.route-body p { margin: 0; color: var(--text); font-size: 1rem; line-height: 1.55; }
 
 /* ---------- Map ---------- */
 .map-section { background: var(--surface-accent); }

@@ -34,6 +34,9 @@ const hero = m.hero;
     <div class="hero-facts">
       {hero.facts.map((f: any) => (
         <div class="info-card">
+          {f.icon && (
+            <div class="ico"><Icon name={f.icon} size={22} /></div>
+          )}
           <div class="k">{f.k}</div>
           <div class="v">{f.v}</div>
         </div>

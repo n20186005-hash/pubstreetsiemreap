@@ -19,7 +19,7 @@
     "theme": "切换日间 / 夜间主题"
   },
   "hero": {
-    "local": "ផាប់ស្ទ្រីត ក្រុងសៀមរាប",
+    "local": "ផាប់ស្ទ្រីត · Street 08",
     "title": "Pub Street",
     "tagline": "探索暹粒市中心最著名的夜生活街区",
     "sub": "老市场旁的活力步行街区，汇聚餐厅、酒吧、街头小吃与柬埔寨式好客——距老市场仅几步之遥。",
@@ -30,20 +30,24 @@
     "ctaMaps": "查看地图",
     "facts": [
       {
-        "k": "位置",
-        "v": "08 街，暹粒"
+        "icon": "ticket",
+        "k": "门票",
+        "v": "免费开放"
       },
       {
-        "k": "类型",
-        "v": "夜生活街区"
+        "icon": "clock",
+        "k": "最佳时段",
+        "v": "18:00 – 23:00"
       },
       {
-        "k": "开放",
-        "v": "24 小时"
+        "icon": "location",
+        "k": "距吴哥窟",
+        "v": "约 7 公里（15 分钟车程）"
       },
       {
-        "k": "评分",
-        "v": "4.4（7,182+）"
+        "icon": "walk",
+        "k": "推荐交通",
+        "v": "Tuk-tuk / 步行"
       }
     ]
   },
@@ -152,19 +156,31 @@
         "year": "1990s",
         "era": "大众旅游之前",
         "title": "安静的河畔小镇",
-        "text": "暹粒曾是一座小小的省会城镇。吴哥窟早已声名远扬，但旅游设施有限，夜生活也很单调。"
+        "text": "1990 年代的暹粒还只是一座安静的洞里萨河畔小城。吴哥窟虽已闻名于世，但旅游基础设施薄弱，夜晚几乎没有任何夜生活。"
+      },
+      {
+        "year": "1998",
+        "era": "背包客时代",
+        "title": "第一家酒吧诞生",
+        "text": "1998 年，面向背包客的现代酒吧 Angkor What? Bar 在街口开业，成为 Pub Street 夜生活的雏形，也标志着这条街从普通民居巷弄向酒吧聚集地转变的起点。"
+      },
+      {
+        "year": "2000",
+        "era": "电影效应",
+        "title": "《古墓丽影》效应",
+        "text": "2000 年好莱坞电影《古墓丽影》（Tomb Raider）在暹粒取景，主演安吉丽娜·朱莉（Angelina Jolie）常光顾街口的 The Red Piano 酒吧。国际媒体的聚焦让 Pub Street 迅速从背包客的秘密基地跃升为全球知名地标。"
       },
       {
         "year": "2000s",
-        "era": "旅游热潮",
-        "title": "Pub Street 成形",
-        "text": "随着国际游客增长，老市场一带的街道逐渐变成餐厅与酒吧，成为游客傍晚的步行街区。"
+        "era": "城市名片",
+        "title": "步行街的形成",
+        "text": "随着游客量激增，暹粒市政府于 2000 年代中期将 08 街（Street 08）划为夜间步行街，铺设沥青、加装特色灯笼，完成了从寻常巷弄到城市名片的蜕变。"
       },
       {
         "year": "如今",
         "era": "现代中心",
         "title": "暹粒的社交心脏",
-        "text": "如今的 Pub Street 是这座城市入夜后的聚集点——现场音乐、街头表演，以及高棉文化与旅行者文化的交融。"
+        "text": "如今的 Pub Street 是这座城市入夜后的聚集点——现场音乐、街头表演，以及高棉文化与来自世界各地旅行者文化的交融。"
       }
     ],
     "legendBadge": "不止是一条酒吧街",
@@ -172,8 +188,8 @@
     "legendText": "在暹粒的口耳相传里，有一条不成文的“规矩”：来到吴哥的旅人，总要在傍晚回到老城，于灯火与香气中卸下一天的尘土。久而久之，连接老市场与河岸的这条短街，便成了“朝圣古迹之后，回到人间”的仪式之地。故事未必见于史册，却恰当地解释了它为何成为无数旅行记忆的注脚。",
     "originTitle": "地名由来",
     "originText": "“Pub Street”（高棉语称 ផ្លូវបារអាហារ / ផ្លូវហាងស្រា）字面意为“酒吧街”，是暹粒老城区一条以餐饮与夜生活著称的短街。它得名于街区聚集的大量酒吧与餐厅，并非正式行政区划名称，而是游客与本地人对这片区域的习惯称呼。",
-    "cultureTitle": "在地文化与故事",
-    "cultureText": "这条街紧邻老市场（Phsar Chas），白天是本地人采买与通勤的寻常巷弄，入夜后则切换为游客聚集的步行休闲区。它的兴起与吴哥古迹旅游的发展紧密相连：随着到访暹粒的世界游客增多，沿街家庭作坊与民居逐渐让位于面向旅人的餐酒馆、街头烧烤与世界音乐。许多长期驻留的艺术家、音乐人与志愿者也在此相遇，使这里成为暹粒“新旧交织”的城市客厅——一边是千年吴哥的肃穆，一边是当代旅人的喧闹。"
+    "cultureTitle": "白天朝圣，夜晚回归人间",
+    "cultureText": "在暹粒的旅行文化里，有一条不成文的默契：旅人白天在肃穆静谧的吴哥寺庙群中攀爬、凝思，耗尽体力；傍晚则返回老城区的 Pub Street，在明亮灯火、冰镇啤酒与街头音乐中，卸下一路的尘土与疲惫。这种「白天朝圣古迹，夜晚回归人间」的鲜明对比，赋予了 Pub Street 超越普通商业街的独特情感符号——它不仅是夜生活区，更是来自世界各地的文化在暹粒交汇的「城市客厅」。"
   },
   "night": {
     "eyebrow": "入夜之后",
@@ -259,23 +275,23 @@
       ]
     },
     "route": {
-      "title": "简单的夜晚安排",
+      "title": "1 小时夜游推荐路线",
       "items": [
         {
-          "time": "18:00",
-          "text": "到达并漫步灯火通明的街道。"
+          "time": "17:30",
+          "text": "老市场（Phsar Chas）看日落、逛地摊，感受市井生活。"
         },
         {
-          "time": "18:45",
-          "text": "在 Khmer 或烧烤餐厅用餐。"
+          "time": "18:30",
+          "text": "转入 Pub Street，找一家高棉餐厅或烧烤摊享用晚餐。"
         },
         {
           "time": "20:00",
-          "text": "点一杯饮品，享受现场音乐。"
+          "text": "来一杯街头冰沙或本地啤酒，沿街体验现场音乐与小吃。"
         },
         {
-          "time": "21:30",
-          "text": "散步前往河边。"
+          "time": "21:00",
+          "text": "漫步至暹粒河边夜市，吹河风、看夜景，为夜晚收尾。"
         }
       ]
     }
@@ -316,7 +332,7 @@
       {
         "title": "市中心周边",
         "icon": "walk",
-        "text": "Pub Street 范围紧凑，从多数市中心酒店与河边步行可达。",
+        "text": "Pub Street 范围紧凑，从多数市中心酒店与河边步行可达。夜间返回住宿时，建议使用 Grab 或 PassApp 等打车软件，价格透明、避免现场议价被溢价。",
         "steps": [
           "从老市场（Phsar Chas）向东走一个街区——Pub Street 就在它旁边。",
           "从暹粒河边步道，向内陆（西）走一个街区到老市场方向。",
@@ -432,6 +448,16 @@
         "icon": "clock",
         "title": "时间",
         "text": "18:00 之后前往，体验满灯的灯光与音乐。"
+      },
+      {
+        "icon": "car",
+        "title": "打车 App（Grab / PassApp）",
+        "text": "除现场议价 Tuk-tuk 外，建议使用当地流行的打车软件 Grab 或 PassApp，明码标价、行程可追踪，避免夜间被溢价。"
+      },
+      {
+        "icon": "handshake",
+        "title": "负责任旅行",
+        "text": "请勿向夜间在街上兜售物品或乞讨的儿童购买东西或给钱，以支持儿童返校（呼应 UNICEF 等 NGO 倡议）；警惕老市场与酒吧街交界处的「奶粉骗局」，理性拒绝陌生人的募捐请求。"
       }
     ],
     "items": [
@@ -475,67 +501,67 @@
     "images": [
       {
         "file": "pub-street-siem-reap-1.jpg",
-        "caption": "夜街",
+        "caption": "夜间街景",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-2.jpg",
-        "caption": "当地生活",
+        "caption": "高棉生活",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-3.jpg",
-        "caption": "美食文化",
+        "caption": "地道美食",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-4.jpg",
-        "caption": "街道风景",
+        "caption": "街头艺术",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-5.jpg",
-        "caption": "夜街",
+        "caption": "夜间街景",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-6.jpg",
-        "caption": "当地生活",
+        "caption": "高棉生活",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-7.jpg",
-        "caption": "美食文化",
+        "caption": "地道美食",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-8.jpg",
-        "caption": "街道风景",
+        "caption": "街头艺术",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-9.jpg",
-        "caption": "夜街",
+        "caption": "夜间街景",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-10.jpg",
-        "caption": "当地生活",
+        "caption": "高棉生活",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-11.jpg",
-        "caption": "美食文化",
+        "caption": "地道美食",
         "span": "gallery-span-3"
       },
       {
         "file": "pub-street-siem-reap-12.jpg",
-        "caption": "街道风景",
+        "caption": "街头艺术",
         "span": "gallery-span-2"
       },
       {
         "file": "pub-street-siem-reap-13.jpg",
-        "caption": "夜街",
+        "caption": "夜间街景",
         "span": "gallery-span-2"
       }
     ]
@@ -722,7 +748,7 @@
       {
         "name": "Google Maps",
         "note": "POI 与位置数据",
-        "url": "https://www.google.com/maps?q=13.3531,103.8562"
+        "url": "https://maps.app.goo.gl/SyrmDeMYGeWN3JWNA"
       },
       {
         "name": "OpenStreetMap",

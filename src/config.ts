@@ -29,8 +29,8 @@ export const siteConfig = {
 
 // Pub Street sits just off Street 08 in central Siem Reap, near the Old Market (Phsar Chas).
 // Coordinates reflect the heart of the pedestrian nightlife zone.
-export const mapsUrl = 'https://www.google.com/maps?q=13.3531,103.8562';
-export const mapsEmbedSrc = 'https://www.google.com/maps?q=13.3531,103.8562&output=embed';
+export const mapsUrl = 'https://maps.app.goo.gl/SyrmDeMYGeWN3JWNA';
+export const mapsEmbedSrc = 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1998737.7052862055!2d103.0606929!3d11.9200747!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3110178b87eece53%3A0xdba9f9bc6565d20f!2sPub%20Street!5e0!3m2!1szh-CN!2sus!4v1785131894045!5m2!1szh-CN!2sus';
 
 export const attraction = {
   name: {
