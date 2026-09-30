@@ -1,1 +1,14 @@
-/  /km/  302
+# Consolidate the root to the default-language page with a permanent 301
+# (was a 302 soft-redirect, which leaked link equity and got / indexed separately).
+/             /km/   301
+/index.html   /km/   301
+
+# Normalise no-slash language entry points to the canonical trailing-slash form.
+/km   /km/   301
+/en   /en/   301
+/zh   /zh/   301
+
+# NOTE: http->https and www->apex must be configured in the Cloudflare dashboard
+# (SSL/TLS -> "Always Use HTTPS" and a Redirect Rule for www.pubstreetsiemreap.com
+# -> https://pubstreetsiemreap.com). Cloudflare Pages _redirects cannot match
+# scheme or a different hostname, so those cannot be expressed here.

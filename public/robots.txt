@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Preference page, not meant to be indexed
+Disallow: /*/cookie-settings/
+
+Sitemap: https://pubstreetsiemreap.com/sitemap.xml

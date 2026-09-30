@@ -21,7 +21,7 @@ const langLabels: Record<string, string> = { km: 'ខ្មែរ', en: 'English
 
 <header class="site-header">
   <div class="container nav">
-    <a href={`/${lang}`} class="brand"><span class="dot"></span>{m.header.siteName}</a>
+    <a href={`/${lang}/`} class="brand"><span class="dot"></span>{m.header.siteName}</a>
 
     <ul class="nav-links" id="nav-links">
       {navItems.map((n) => (
@@ -32,7 +32,7 @@ const langLabels: Record<string, string> = { km: 'ខ្មែរ', en: 'English
     <div class="nav-right">
       <div class="lang-switch">
         {languagesList.map((l) => (
-          <a href={`/${l}`} class={l === lang ? 'active' : ''}>{langLabels[l]}</a>
+          <a href={`/${l}/`} class={l === lang ? 'active' : ''}>{langLabels[l]}</a>
         ))}
       </div>
       <button class="theme-btn" id="theme-btn" aria-label={m.common.theme} title={m.common.theme}>

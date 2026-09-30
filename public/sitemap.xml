@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://pubstreetsiemreap.com/km/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://pubstreetsiemreap.com/km/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pubstreetsiemreap.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pubstreetsiemreap.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pubstreetsiemreap.com/en/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://pubstreetsiemreap.com/km/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pubstreetsiemreap.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pubstreetsiemreap.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pubstreetsiemreap.com/en/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://pubstreetsiemreap.com/km/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pubstreetsiemreap.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pubstreetsiemreap.com/zh/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pubstreetsiemreap.com/en/"/>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/km/privacy-policy/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/en/privacy-policy/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/zh/privacy-policy/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/km/terms-of-service/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/en/terms-of-service/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/zh/terms-of-service/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

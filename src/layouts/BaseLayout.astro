@@ -14,7 +14,9 @@ const { path = '', noJsonLd = false, title: titleOverride, description: descOver
 const { lang, messages: m, t } = getI18n(Astro.url);
 
 const SITE = siteConfig.baseUrl;
-const canonical = `${SITE}/${lang}${path}`;
+// Astro serves directory routes at the trailing-slash URL (/en/); keep canonical
+// and hreflang consistent with that so Google does not index /en and /en/ separately.
+const canonical = path ? `${SITE}/${lang}${path}/` : `${SITE}/${lang}/`;
 const title = titleOverride ?? m.meta?.title ?? 'Pub Street Siem Reap';
 const description = descOverride ?? m.meta?.description ?? 'Discover Pub Street in Siem Reap, Cambodia.';
 const ogImage = `${SITE}/gallery/pub-street-siem-reap-1.jpg`;
@@ -48,8 +50,25 @@ const jsonLd = {
     reviewCount: attraction.reviews,
     bestRating: 5,
   },
+  isAccessibleForFree: true,
+  publicAccess: true,
   sameAs: [mapsUrl],
 };
+
+// FAQPage structured data built from the visible FAQ section so the answers can
+// surface as rich results for the long-tail queries GSC shows (nightlife, how to
+// get there, things to do, etc.).
+const faqLd = !noJsonLd && m?.faq?.items
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: m.faq.items.map((it: any) => ({
+        '@type': 'Question',
+        name: it.q,
+        acceptedAnswer: { '@type': 'Answer', text: it.a },
+      })),
+    }
+  : null;
 ---
 
 <!doctype html>
@@ -69,7 +88,7 @@ const jsonLd = {
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Pub Street Siem Reap Guide" />
-    <meta property="og:locale" lang={lang} />
+    <meta property="og:locale" content={lang === 'en' ? 'en_US' : lang === 'zh' ? 'zh_CN' : 'km_KH'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
@@ -80,6 +99,7 @@ const jsonLd = {
     <meta name="twitter:image" content={ogImage} />
 
     {!noJsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}
 
     {GA_MEASUREMENT_ID && (
       <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>

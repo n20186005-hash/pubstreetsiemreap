@@ -17,7 +17,7 @@ export const siteConfig = {
     const env =
       (typeof process !== 'undefined' && process.env && process.env.CURRENT_SITE_DOMAIN) ||
       (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.CURRENT_SITE_DOMAIN);
-    const fallback = 'https://pubstreet-siemreap.com';
+    const fallback = 'https://pubstreetsiemreap.com';
     let base = (env || fallback).toString().trim().replace(/\/+$/, '');
     if (!/^https?:\/\//.test(base)) base = 'https://' + base;
     return base;
@@ -41,7 +41,7 @@ export const attraction = {
   lat: 13.3531,
   lng: 103.8562,
   rating: 4.4,
-  reviews: 7182,
+  reviews: 7333,
   address: {
     streetAddress: 'Street 08',
     addressLocality: 'Krong Siem Reap',

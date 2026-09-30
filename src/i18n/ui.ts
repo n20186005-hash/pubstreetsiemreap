@@ -34,9 +34,9 @@ export function htmlLangAttr(lang: string): string {
 export function buildAlternates(): Record<string, string> {
   const base = siteConfig.baseUrl;
   return {
-    km: `${base}/km`,
-    en: `${base}/en`,
-    zh: `${base}/zh`,
-    xDefault: `${base}/en`,
+    km: `${base}/km/`,
+    en: `${base}/en/`,
+    zh: `${base}/zh/`,
+    xDefault: `${base}/en/`,
   };
 }

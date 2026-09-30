@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Pub Street Siem Reap Cambodia — Nightlife Guide & Visitor Information",
-    "description": "Discover Pub Street in Siem Reap, Cambodia. Learn about its history, nightlife, food culture, location, travel tips and nearby attractions for an independent visitor guide."
+    "title": "Pub Street Siem Reap: Nightlife, Bars, Food & Map (2026 Guide)",
+    "description": "Pub Street Siem Reap guide — Cambodia's top nightlife street. Find bars, restaurants, the night market, how to get there, opening hours and things to do in Siem Reap besides Angkor Wat."
   },
   "header": {
     "siteName": "Pub Street",
@@ -24,7 +24,7 @@
     "tagline": "Discover the famous nightlife street in the heart of Siem Reap",
     "sub": "A lively pedestrian hub of restaurants, bars, street food and Khmer hospitality — steps from the Old Market.",
     "rating": "4.4",
-    "reviews": "7,182+",
+    "reviews": "7,333+",
     "reviewsSuffix": "Google reviews",
     "ctaExplore": "Explore Location",
     "ctaMaps": "View Map",
@@ -79,7 +79,7 @@
       {
         "icon": "users",
         "k": "Reviews",
-        "v": "7,182+"
+        "v": "7,333+"
       },
       {
         "icon": "location",
@@ -106,7 +106,7 @@
       {
         "icon": "star",
         "k": "Rating",
-        "v": "4.4 (7,182+)"
+        "v": "4.4 (7,333+)"
       },
       {
         "icon": "users",
@@ -422,7 +422,7 @@
       }
     ],
     "rating": "4.4",
-    "count": "Based on 7,182+ Google reviews"
+    "count": "Based on 7,333+ Google reviews"
   },
   "practical": {
     "eyebrow": "Before You Go",
@@ -586,6 +586,30 @@
       {
         "q": "Is Pub Street suitable for families?",
         "a": "Yes — early evening is the most suitable time for families, before the crowds and late-night energy peak."
+      },
+      {
+        "q": "What is there to do at night in Siem Reap?",
+        "a": "Pub Street is the city's main after-dark hub — bars, live music, street food and a lively pedestrian atmosphere. Nearby you'll also find the Angkor Night Market and the riverside promenade."
+      },
+      {
+        "q": "What to do in Siem Reap besides Angkor Wat?",
+        "a": "Beyond the temples, spend an evening on Pub Street, browse the Old Market (Phsar Chas), wander the Angkor Night Market, stroll the Siem Reap riverside, or catch a show such as Phare, the Cambodian Circus."
+      },
+      {
+        "q": "Is there a night market near Pub Street?",
+        "a": "Yes — the Angkor Night Market is about a 5-minute walk away, with handicrafts, clothing and street-food stalls open into the night."
+      },
+      {
+        "q": "How do I get to Pub Street?",
+        "a": "It sits beside the Old Market (Phsar Chas) in central Siem Reap. Walk from most city-center hotels, or take a tuk-tuk — roughly 15–20 minutes from Angkor Wat and 20–30 minutes from the airport."
+      },
+      {
+        "q": "What is the best time to visit Pub Street?",
+        "a": "Arrive after 18:00 for the full lights-and-music experience; the liveliest period is roughly 18:00–23:00. Early evening is calmer and more family-friendly."
+      },
+      {
+        "q": "Is there an entry fee for Pub Street?",
+        "a": "No — walking around Pub Street is free. You only pay for the food, drinks and any activities you choose."
       }
     ]
   },
