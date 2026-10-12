@@ -1,0 +1,32 @@
+---
+import { TOPICS } from '../data/topics';
+// Internal links to the English long-tail topic pages, shown on the English homepage
+// so search users land on a focused page instead of a duplicated homepage.
+const { lang } = Astro.props as { lang: string };
+---
+
+<section class="section-padding" style="background:var(--surface-accent)">
+  <div class="container">
+    <p class="eyebrow">Plan your evening</p>
+    <h2 class="section-title">Siem Reap after dark — more guides</h2>
+    <p class="section-lead">
+      Beyond Pub Street itself: nightlife areas, where to eat and drink, the night markets and full evening
+      itineraries.
+    </p>
+    <div class="guide-grid" style="margin-top:26px">
+      {
+        TOPICS.map((t) => (
+          <a class="card card-pad guide-card" href={`/${lang}/${t.slug}/`} style="display:block">
+            <div class="gc-ico" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18M12 5l7 7-7 7" />
+              </svg>
+            </div>
+            <h3>{t.title}</h3>
+            <p class="gt">{t.metaDescription}</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

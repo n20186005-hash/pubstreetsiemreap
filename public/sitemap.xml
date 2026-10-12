@@ -67,4 +67,36 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/en/siem-reap-nightlife/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pubstreetsiemreap.com/en/siem-reap-nightlife/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pubstreetsiemreap.com/en/siem-reap-nightlife/"/>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/en/pub-street-restaurants/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pubstreetsiemreap.com/en/pub-street-restaurants/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pubstreetsiemreap.com/en/pub-street-restaurants/"/>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/en/siem-reap-night-markets/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pubstreetsiemreap.com/en/siem-reap-night-markets/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pubstreetsiemreap.com/en/siem-reap-night-markets/"/>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pubstreetsiemreap.com/en/things-to-do-in-siem-reap-at-night/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pubstreetsiemreap.com/en/things-to-do-in-siem-reap-at-night/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pubstreetsiemreap.com/en/things-to-do-in-siem-reap-at-night/"/>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

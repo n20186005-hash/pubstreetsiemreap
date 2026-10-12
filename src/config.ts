@@ -41,7 +41,7 @@ export const attraction = {
   lat: 13.3531,
   lng: 103.8562,
   rating: 4.4,
-  reviews: 7333,
+  reviews: 7372,
   address: {
     streetAddress: 'Street 08',
     addressLocality: 'Krong Siem Reap',

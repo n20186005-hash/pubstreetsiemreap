@@ -5,11 +5,12 @@ import Footer from '../components/Footer.astro';
 import { getI18n, htmlLangAttr, buildAlternates } from '../i18n/ui';
 import { siteConfig, mapsUrl, attraction, GA_MEASUREMENT_ID } from '../config';
 
-const { path = '', noJsonLd = false, title: titleOverride, description: descOverride } = Astro.props as {
+const { path = '', noJsonLd = false, title: titleOverride, description: descOverride, alternates: altOverride } = Astro.props as {
   path?: string;
   noJsonLd?: boolean;
   title?: string;
   description?: string;
+  alternates?: Record<string, string>;
 };
 const { lang, messages: m, t } = getI18n(Astro.url);
 
@@ -20,7 +21,7 @@ const canonical = path ? `${SITE}/${lang}${path}/` : `${SITE}/${lang}/`;
 const title = titleOverride ?? m.meta?.title ?? 'Pub Street Siem Reap';
 const description = descOverride ?? m.meta?.description ?? 'Discover Pub Street in Siem Reap, Cambodia.';
 const ogImage = `${SITE}/gallery/pub-street-siem-reap-1.jpg`;
-const alt = buildAlternates();
+const alt = altOverride ?? buildAlternates();
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -99,7 +100,7 @@ const faqLd = !noJsonLd && m?.faq?.items
     <meta name="twitter:image" content={ogImage} />
 
     {!noJsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
-    {faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}
+    {!noJsonLd && faqLd && <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />}
 
     {GA_MEASUREMENT_ID && (
       <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>

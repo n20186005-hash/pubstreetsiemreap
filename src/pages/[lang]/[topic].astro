@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TopicPage from '../../components/TopicPage.astro';
+import { siteConfig } from '../../config';
+import { TOPICS, getTopic } from '../../data/topics';
+
+export function getStaticPaths() {
+  // Topic pages are currently published in English only, so they generate under /en/.
+  return TOPICS.map((t) => ({
+    params: { lang: 'en', topic: t.slug },
+  }));
+}
+
+const { topic } = Astro.params as { topic: string };
+const t = getTopic(topic);
+if (!t) return Astro.redirect('/en/');
+
+const SITE = siteConfig.baseUrl;
+const canonical = `${SITE}/en/${t.slug}/`;
+const alternates = { en: canonical, xDefault: canonical };
+---
+
+<BaseLayout
+  path={t.slug}
+  title={t.metaTitle}
+  description={t.metaDescription}
+  alternates={alternates}
+  noJsonLd={true}
+>
+  <TopicPage topic={t} canonical={canonical} lang="en" />
+</BaseLayout>

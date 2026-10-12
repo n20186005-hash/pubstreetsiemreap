@@ -1,0 +1,152 @@
+---
+import { siteConfig } from '../config';
+import { TOPICS, type Topic } from '../data/topics';
+
+const { topic, canonical, lang } = Astro.props as {
+  topic: Topic;
+  canonical: string;
+  lang: string;
+};
+const SITE = siteConfig.baseUrl;
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Pub Street Siem Reap',
+      item: `${SITE}/${lang}/`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: topic.title,
+      item: canonical,
+    },
+  ],
+};
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: topic.faq.map((it) => ({
+    '@type': 'Question',
+    name: it.q,
+    acceptedAnswer: { '@type': 'Answer', text: it.a },
+  })),
+};
+
+const webPageLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: topic.title,
+  description: topic.metaDescription,
+  url: canonical,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Pub Street Siem Reap Guide',
+    url: `${SITE}/${lang}/`,
+  },
+};
+---
+
+<article>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <p class="local">Siem Reap Nightlife Guide</p>
+      <h1>{topic.title}</h1>
+      <p class="tagline">{topic.metaDescription}</p>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container">
+      <p class="section-lead" style="max-width:780px">{topic.intro}</p>
+
+      <div class="intro-body" style="margin-top:34px">
+        {
+          topic.sections.map((s) => (
+            <div class="card card-pad" style="margin-bottom:18px">
+              <h3 style="margin:0 0 10px;font-size:1.3rem">{s.title}</h3>
+              <p style="margin:0;color:var(--text-muted)">{s.text}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      {
+        topic.venues && (
+          <div style="margin-top:38px">
+            <h2 class="section-title">Well-known venues for orientation</h2>
+            <p class="section-lead">
+              A few long-running, widely recognised spots are listed below as landmarks to help you find your way
+              around — not recommendations or endorsements. Hours and ownership change, so check current reviews
+              before visiting.
+            </p>
+            <div class="nearby-grid" style="margin-top:22px">
+              {topic.venues.map((v) => (
+                <div class="card card-pad nearby-card">
+                  <div class="nearby-head">
+                    <h3>{v.name}</h3>
+                  </div>
+                  <p style="margin:6px 0 0;color:var(--text-muted)">
+                    <strong style="color:var(--heading)">Area:</strong> {v.area}
+                  </p>
+                  <p style="margin:6px 0 0;color:var(--text-muted)">{v.knownFor}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      }
+
+      <div style="margin-top:44px;background:var(--surface-accent);border:1px solid var(--border);border-radius:var(--radius);padding:34px 28px">
+        <h2 class="section-title">Frequently asked questions</h2>
+        <div class="faq-list" style="padding:0;border:0;background:transparent;box-shadow:none">
+          {
+            topic.faq.map((f) => (
+              <div class="faq-item" style="padding:18px 4px">
+                <h3 style="margin:0 0 8px;font-size:1.05rem;color:var(--heading);font-family:var(--font-body)">
+                  {f.q}
+                </h3>
+                <p style="margin:0;color:var(--text-muted)">{f.a}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div style="margin-top:44px">
+        <h2 class="section-title">More Siem Reap night guides</h2>
+        <div class="guide-grid" style="margin-top:22px">
+          {
+            topic.related.map((slug) => {
+              const rt = TOPICS.find((x) => x.slug === slug);
+              if (!rt) return null;
+              return (
+                <a class="card card-pad guide-card" href={`/${lang}/${slug}/`} style="display:block">
+                  <div class="gc-ico" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M3 12h18M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  <h3>{rt.title}</h3>
+                  <p class="gt">{rt.metaDescription}</p>
+                </a>
+              );
+            })
+          }
+        </div>
+      </div>
+
+      <p style="margin-top:34px">
+        <a class="link-accent" href={`/${lang}/`}>&larr; Back to the Pub Street Siem Reap guide</a>
+      </p>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify([breadcrumbLd, faqLd, webPageLd])} />
+</article>

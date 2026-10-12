@@ -17,6 +17,7 @@ import Gallery from '../../components/Gallery.astro';
 import Amenities from '../../components/Amenities.astro';
 import Practical from '../../components/Practical.astro';
 import FAQ from '../../components/FAQ.astro';
+import TopicLinks from '../../components/TopicLinks.astro';
 
 export function getStaticPaths() {
   return languagesList.map((lang) => ({ params: { lang } }));
@@ -42,4 +43,5 @@ const props = { lang, messages: m, t };
   <Gallery {...props} />
   <Practical {...props} />
   <FAQ {...props} />
+  {lang === 'en' && <TopicLinks lang={lang} />}
 </BaseLayout>
