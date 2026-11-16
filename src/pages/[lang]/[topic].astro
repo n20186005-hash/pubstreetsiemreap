@@ -2,22 +2,22 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TopicPage from '../../components/TopicPage.astro';
 import { siteConfig } from '../../config';
-import { TOPICS, getTopic } from '../../data/topics';
+import { TOPICS } from '../../data/topics';
+import { getLocalizedTopic } from '../../data/topics-i18n';
 
 export function getStaticPaths() {
-  // Topic pages are currently published in English only, so they generate under /en/.
-  return TOPICS.map((t) => ({
-    params: { lang: 'en', topic: t.slug },
-  }));
+  return (['en', 'zh', 'km'] as const).flatMap((lang) => TOPICS.map((t) => ({
+    params: { lang, topic: t.slug },
+  })));
 }
 
-const { topic } = Astro.params as { topic: string };
-const t = getTopic(topic);
-if (!t) return Astro.redirect('/en/');
+const { topic, lang } = Astro.params as { topic: string; lang: 'en' | 'zh' | 'km' };
+const t = getLocalizedTopic(lang, topic);
+if (!t) return Astro.redirect(`/${lang}/`);
 
 const SITE = siteConfig.baseUrl;
-const canonical = `${SITE}/en/${t.slug}/`;
-const alternates = { en: canonical, xDefault: canonical };
+const canonical = `${SITE}/${lang}/${t.slug}/`;
+const alternates = { en: `${SITE}/en/${t.slug}/`, zh: `${SITE}/zh/${t.slug}/`, km: `${SITE}/km/${t.slug}/`, xDefault: `${SITE}/en/${t.slug}/` };
 ---
 
 <BaseLayout
@@ -27,5 +27,5 @@ const alternates = { en: canonical, xDefault: canonical };
   alternates={alternates}
   noJsonLd={true}
 >
-  <TopicPage topic={t} canonical={canonical} lang="en" />
+  <TopicPage topic={t} canonical={canonical} lang={lang} />
 </BaseLayout>

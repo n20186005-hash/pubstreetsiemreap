@@ -1,21 +1,24 @@
 ---
-import { TOPICS } from '../data/topics';
+import { getTopics } from '../data/topics-i18n';
 // Internal links to the English long-tail topic pages, shown on the English homepage
 // so search users land on a focused page instead of a duplicated homepage.
 const { lang } = Astro.props as { lang: string };
+const topics = getTopics(lang as 'en' | 'zh' | 'km');
+const headings = {
+  en: ['Plan your evening', 'Siem Reap after dark — more guides', 'Beyond Pub Street itself: nightlife areas, where to eat and drink, the night markets and full evening itineraries.'],
+  zh: ['规划你的夜晚', '暹粒夜间游览专题', '探索酒吧街以外的夜生活、餐饮、夜市、步行路线与晚间活动。'],
+  km: ['រៀបចំពេលល្ងាច', 'មគ្គុទ្ទេសក៍សៀមរាបពេលយប់', 'ស្វែងយល់ពីតំបន់កម្សាន្ត អាហារ ផ្សាររាត្រី និងផ្លូវដើរពេលល្ងាច។'],
+}[lang as 'en' | 'zh' | 'km'];
 ---
 
 <section class="section-padding" style="background:var(--surface-accent)">
   <div class="container">
-    <p class="eyebrow">Plan your evening</p>
-    <h2 class="section-title">Siem Reap after dark — more guides</h2>
-    <p class="section-lead">
-      Beyond Pub Street itself: nightlife areas, where to eat and drink, the night markets and full evening
-      itineraries.
-    </p>
+    <p class="eyebrow">{headings[0]}</p>
+    <h2 class="section-title">{headings[1]}</h2>
+    <p class="section-lead">{headings[2]}</p>
     <div class="guide-grid" style="margin-top:26px">
       {
-        TOPICS.map((t) => (
+        topics.map((t) => (
           <a class="card card-pad guide-card" href={`/${lang}/${t.slug}/`} style="display:block">
             <div class="gc-ico" aria-hidden="true">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

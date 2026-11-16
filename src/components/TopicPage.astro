@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from '../config';
-import { TOPICS, type Topic } from '../data/topics';
+import { type Topic } from '../data/topics';
+import { getTopics } from '../data/topics-i18n';
 import { mapsUrl } from '../config';
 
 const { topic, canonical, lang } = Astro.props as {
@@ -9,6 +10,12 @@ const { topic, canonical, lang } = Astro.props as {
   lang: string;
 };
 const SITE = siteConfig.baseUrl;
+const allTopics = getTopics(lang as 'en' | 'zh' | 'km');
+const labels = {
+  en: { eyebrow: 'Siem Reap Travel Guide', map: 'View the relevant area on Google Maps ↗', venues: 'Well-known venues for orientation', venueIntro: 'These names are provided as landmarks, not endorsements. Business details can change; check current opening information before visiting.', area: 'Area', faq: 'Frequently asked questions', more: 'More Siem Reap guides', back: 'Back to the Pub Street Siem Reap guide' },
+  zh: { eyebrow: '暹粒旅行指南', map: '在 Google 地图查看相关地点 ↗', venues: '帮助辨认位置的知名店家', venueIntro: '以下店名仅供辨认街区，不代表本站推荐。营业与经营信息可能变化，请在现场核实。', area: '区域', faq: '常见问题', more: '更多暹粒专题', back: '返回暹粒酒吧街指南' },
+  km: { eyebrow: 'មគ្គុទ្ទេសក៍ទេសចរណ៍សៀមរាប', map: 'មើលតំបន់នេះលើ Google Maps ↗', venues: 'ហាងល្បីសម្រាប់សម្គាល់ទីតាំង', venueIntro: 'ឈ្មោះហាងទាំងនេះសម្រាប់សម្គាល់ទីតាំង មិនមែនការណែនាំពាណិជ្ជកម្មទេ។ សូមពិនិត្យព័ត៌មានបច្ចុប្បន្ននៅទីតាំងផ្ទាល់។', area: 'តំបន់', faq: 'សំណួរញឹកញាប់', more: 'មគ្គុទ្ទេសក៍សៀមរាបបន្ថែម', back: 'ត្រឡប់ទៅមគ្គុទ្ទេសក៍ផាប់ស្ទ្រីត' },
+}[lang as 'en' | 'zh' | 'km'];
 
 const breadcrumbLd = {
   '@context': 'https://schema.org',
@@ -57,7 +64,7 @@ const webPageLd = {
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="container hero-inner">
-      <p class="local">Siem Reap Nightlife Guide</p>
+      <p class="local">{labels.eyebrow}</p>
       <h1>{topic.title}</h1>
       <p class="tagline">{topic.metaDescription}</p>
     </div>
@@ -66,7 +73,7 @@ const webPageLd = {
   <section class="section-padding">
     <div class="container">
       <p class="section-lead" style="max-width:780px">{topic.intro}</p>
-      <p style="margin-top:18px"><a class="link-accent" href={topic.mapQuery ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(topic.mapQuery)}` : mapsUrl} target="_blank" rel="noopener noreferrer">View the relevant area on Google Maps ↗</a></p>
+      <p style="margin-top:18px"><a class="link-accent" href={topic.mapQuery ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(topic.mapQuery)}` : mapsUrl} target="_blank" rel="noopener noreferrer">{labels.map}</a></p>
 
       <div class="intro-body" style="margin-top:34px">
         {
@@ -82,12 +89,8 @@ const webPageLd = {
       {
         topic.venues && (
           <div style="margin-top:38px">
-            <h2 class="section-title">Well-known venues for orientation</h2>
-            <p class="section-lead">
-              A few long-running, widely recognised spots are listed below as landmarks to help you find your way
-              around — not recommendations or endorsements. Hours and ownership change, so check current reviews
-              before visiting.
-            </p>
+            <h2 class="section-title">{labels.venues}</h2>
+            <p class="section-lead">{labels.venueIntro}</p>
             <div class="nearby-grid" style="margin-top:22px">
               {topic.venues.map((v) => (
                 <div class="card card-pad nearby-card">
@@ -95,7 +98,7 @@ const webPageLd = {
                     <h3>{v.name}</h3>
                   </div>
                   <p style="margin:6px 0 0;color:var(--text-muted)">
-                    <strong style="color:var(--heading)">Area:</strong> {v.area}
+                    <strong style="color:var(--heading)">{labels.area}:</strong> {v.area}
                   </p>
                   <p style="margin:6px 0 0;color:var(--text-muted)">{v.knownFor}</p>
                 </div>
@@ -106,7 +109,7 @@ const webPageLd = {
       }
 
       <div style="margin-top:44px;background:var(--surface-accent);border:1px solid var(--border);border-radius:var(--radius);padding:34px 28px">
-        <h2 class="section-title">Frequently asked questions</h2>
+        <h2 class="section-title">{labels.faq}</h2>
         <div class="faq-list" style="padding:0;border:0;background:transparent;box-shadow:none">
           {
             topic.faq.map((f) => (
@@ -122,11 +125,11 @@ const webPageLd = {
       </div>
 
       <div style="margin-top:44px">
-        <h2 class="section-title">More Siem Reap night guides</h2>
+        <h2 class="section-title">{labels.more}</h2>
         <div class="guide-grid" style="margin-top:22px">
           {
             topic.related.map((slug) => {
-              const rt = TOPICS.find((x) => x.slug === slug);
+              const rt = allTopics.find((x) => x.slug === slug);
               if (!rt) return null;
               return (
                 <a class="card card-pad guide-card" href={`/${lang}/${slug}/`} style="display:block">
@@ -145,7 +148,7 @@ const webPageLd = {
       </div>
 
       <p style="margin-top:34px">
-        <a class="link-accent" href={`/${lang}/`}>&larr; Back to the Pub Street Siem Reap guide</a>
+        <a class="link-accent" href={`/${lang}/`}>&larr; {labels.back}</a>
       </p>
     </div>
   </section>

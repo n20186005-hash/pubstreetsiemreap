@@ -1,6 +1,7 @@
 ---
 import { languagesList } from '../i18n/ui';
 import Icon from './Icon.astro';
+import { TOPICS } from '../data/topics';
 
 const { lang, messages: m, t } = Astro.props as { lang: string; messages: any; t: (k: string) => string };
 
@@ -19,6 +20,8 @@ const navItems = [
 const langLabels: Record<string, string> = { km: 'ខ្មែរ', en: 'English', zh: '中文' };
 const onHome = Astro.url.pathname === `/${lang}/`;
 const attractionPath = Astro.url.pathname.match(/^\/(?:en|zh|km)\/(attractions\/[^/]+)\/?$/)?.[1];
+const topicPath = Astro.url.pathname.match(/^\/(?:en|zh|km)\/([^/]+)\/?$/)?.[1];
+const localizedPath = attractionPath ?? (topicPath && TOPICS.some((topic) => topic.slug === topicPath) ? topicPath : undefined);
 ---
 
 <header class="site-header">
@@ -34,7 +37,7 @@ const attractionPath = Astro.url.pathname.match(/^\/(?:en|zh|km)\/(attractions\/
     <div class="nav-right">
       <div class="lang-switch">
         {languagesList.map((l) => (
-          <a href={`/${l}/${attractionPath ? `${attractionPath}/` : ''}`} class={l === lang ? 'active' : ''}>{langLabels[l]}</a>
+          <a href={`/${l}/${localizedPath ? `${localizedPath}/` : ''}`} class={l === lang ? 'active' : ''}>{langLabels[l]}</a>
         ))}
       </div>
       <button class="theme-btn" id="theme-btn" aria-label={m.common.theme} title={m.common.theme}>
