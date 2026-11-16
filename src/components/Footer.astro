@@ -3,6 +3,7 @@ import Icon from './Icon.astro';
 import { mapsUrl } from '../config';
 
 const { messages: m, lang } = Astro.props as { lang: string; messages: any; t: (k: string) => string };
+const onHome = Astro.url.pathname === `/${lang}/`;
 const f = m.footer;
 ---
 
@@ -22,7 +23,7 @@ const f = m.footer;
         <h4>{f.exploreTitle}</h4>
         <ul>
           {f.exploreLinks.map((l: any) => (
-            <li><a href={l.href}>{l.label}</a></li>
+            <li><a href={l.href.startsWith('#') && !onHome ? `/${lang}/${l.href}` : l.href}>{l.label}</a></li>
           ))}
         </ul>
       </div>
