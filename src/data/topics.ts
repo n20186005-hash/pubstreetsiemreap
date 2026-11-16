@@ -29,9 +29,76 @@ export interface Topic {
   faq: TopicFaq[];
   venues?: TopicVenue[];
   related: string[];
+  mapQuery?: string;
 }
 
 export const TOPICS: Topic[] = [
+  {
+    slug: 'pub-street-siem-reap-location',
+    title: 'Where Is Pub Street in Siem Reap?',
+    metaTitle: 'Pub Street Siem Reap Location: Map, Street 08 & Walking Directions',
+    metaDescription: 'Find Pub Street on Street 08 near Phsar Chas in central Siem Reap, with walking directions, arrival tips and a direct location map.',
+    intro: 'Pub Street is a compact nightlife and restaurant area along Street 08 in central Siem Reap, a short walk from the Old Market (Phsar Chas). The street is a public thoroughfare, not a ticketed attraction. This location guide helps you arrive at the correct pedestrian block.',
+    mapQuery: 'Pub Street Street 08 Krong Siem Reap Cambodia',
+    sections: [
+      { title: 'Address and landmark', text: 'Search for “Pub Street, Street 08, Krong Siem Reap, Cambodia”. The Old Market is a useful nearby landmark. Several streets in the Old Market quarter contain restaurants and bars, but Street 08 is the central Pub Street strip.' },
+      { title: 'Walking from the Old Market', text: 'From Phsar Chas, follow the lively restaurant lanes toward Street 08. The short route is easiest on foot; narrow streets can be congested with tuk-tuks and delivery vehicles, especially in the evening. Use the map link above for your actual starting point.' },
+      { title: 'Arriving from a hotel or Angkor temples', text: 'Ask your driver for Pub Street near the Old Market, or set the exact destination in a ride app. Angkor Wat is outside the city centre; do not plan to walk from the temple complex. Verify pickup locations with your driver before leaving a crowded area.' },
+      { title: 'Best time to orient yourself', text: 'Early evening is convenient for a first walk, when restaurant signs are illuminated but the area is often less crowded than later. Individual shops, bars and restaurants set their own hours; the street itself does not have one shared opening time.' },
+      { title: 'Visitor essentials', text: 'There is no admission fee to walk down Pub Street. Bring small cash for stalls, keep valuables secure and take care on uneven paving. For a quieter break, walk toward the river and Old Market side streets.' },
+    ],
+    faq: [
+      { q: 'What street is Pub Street on?', a: 'The main Pub Street strip is on Street 08 in central Siem Reap, Cambodia.' },
+      { q: 'Is Pub Street close to the Old Market?', a: 'Yes, Pub Street and Phsar Chas are in the same compact central district and are easy to combine on foot.' },
+      { q: 'Do I need a ticket to visit Pub Street?', a: 'No. Walking along the public street is free; businesses charge separately for food, drinks and services.' },
+      { q: 'Can a tuk-tuk take me directly there?', a: 'A tuk-tuk can drop you near the central block; access can be affected by evening crowds and traffic arrangements.' },
+    ],
+    related: ['siem-reap-nightlife', 'siem-reap-night-markets', 'pub-street-restaurants'],
+  },
+  {
+    slug: 'pub-street-siem-reap-opening-hours',
+    title: 'Pub Street Opening Hours and Best Time to Visit',
+    metaTitle: 'Pub Street Siem Reap Opening Hours: Best Evening Time & Tips',
+    metaDescription: 'When to visit Pub Street in Siem Reap: evening atmosphere, quieter hours, restaurant schedules, crowd considerations and practical tips.',
+    intro: 'Pub Street is an open city street rather than a venue with one official ticket gate or fixed operating schedule. Restaurants, bars and stalls open independently, so the best time to go depends on whether you want dinner, photos or a lively night out.',
+    mapQuery: 'Pub Street Siem Reap Cambodia',
+    sections: [
+      { title: 'When does Pub Street come alive?', text: 'Many visitors arrive in the early evening for dinner, when lights and signs become prominent. The atmosphere typically grows livelier later as bars fill. Timing changes with the season, weather and day of week, so treat any suggested hour as a planning estimate.' },
+      { title: 'Quiet visit versus nightlife', text: 'For photos and a relaxed meal, consider arriving before the busiest late-evening period. For music and nightlife, come later, keeping in mind that sound levels vary substantially between venues and adjoining lanes.' },
+      { title: 'Are restaurants and bars open every day?', text: 'Individual venues decide their opening hours and may close temporarily for holidays, renovations or private events. Check a specific business listing directly rather than relying on a single opening-hours claim for the whole street.' },
+      { title: 'Weather and walking conditions', text: 'Rain can make walkways slippery and reduce outdoor seating. Carry a light rain layer in the wet season; breathable clothing and comfortable shoes are useful throughout the year.' },
+      { title: 'An easy evening plan', text: 'Start near Phsar Chas, have dinner on or near Street 08, then browse the nearby night-market area or walk toward the river. Check each market’s current location and schedule before making a special trip.' },
+    ],
+    faq: [
+      { q: 'Is Pub Street open 24 hours?', a: 'It is a public street without a unified entrance schedule, but that does not mean its restaurants, stalls and bars operate 24 hours.' },
+      { q: 'What is the best time for families?', a: 'Early evening tends to be easier for families seeking dinner and a walk before the livelier bar atmosphere builds.' },
+      { q: 'Is Pub Street busy every night?', a: 'Crowds vary by season, day of week, weather and local events. Weekends and peak travel periods can be busier.' },
+      { q: 'Can I visit without drinking?', a: 'Yes. Pub Street also offers restaurants, snacks, people-watching and access to nearby walking areas.' },
+    ],
+    related: ['pub-street-siem-reap-location', 'things-to-do-in-siem-reap-at-night', 'pub-street-restaurants'],
+  },
+  {
+    slug: 'pub-street-vs-night-market',
+    title: 'Pub Street vs Siem Reap Night Markets',
+    metaTitle: 'Pub Street vs Siem Reap Night Market: Where to Go Tonight?',
+    metaDescription: 'Compare Pub Street bars and restaurants with Siem Reap night markets for shopping, food, family visits and an easy walking itinerary.',
+    intro: 'Pub Street and the night markets are often mentioned together in search results, but they are different experiences. Pub Street is primarily a restaurant and nightlife district; night markets focus on browsing stalls and shopping. You can visit both in one evening without treating them as the same place.',
+    mapQuery: 'Pub Street Siem Reap Cambodia',
+    sections: [
+      { title: 'Choose Pub Street for dinner and nightlife', text: 'Street 08 and surrounding lanes have illuminated restaurants, bars, music and cafés. A short stroll is free, while prices depend on where you choose to eat or drink. Early evening is usually more comfortable for travellers who prefer less noise.' },
+      { title: 'Choose a night market for shopping', text: 'Night-market stalls can offer handicrafts, clothing, souvenirs and snacks. Different markets have different locations and trading schedules. Look up the specific market on a map before leaving, since market operators and venues can change.' },
+      { title: 'A simple combined walking route', text: 'Begin around the Old Market quarter, walk along Pub Street for dinner and atmosphere, then continue toward the night-market area you have verified is operating. Finish with a quieter riverside walk if the weather is pleasant.' },
+      { title: 'What about children and non-drinkers?', text: 'Both areas can suit a low-key evening. Markets provide browsing, while Pub Street has dining options as well as bars. Go earlier and take breaks off the loudest part of the strip.' },
+      { title: 'Budget and payments', text: 'Both areas can be enjoyed without an entry ticket, but purchases cost extra. Carry small cash for stalls, compare displayed menus and agree a transport fare before boarding a tuk-tuk.' },
+    ],
+    faq: [
+      { q: 'Is Pub Street itself a night market?', a: 'No. Pub Street is a nightlife and dining street; nearby night markets are separate groups of stalls and shops.' },
+      { q: 'Can I visit both in one night?', a: 'Yes. Central Siem Reap is compact, and a Pub Street dinner can be combined with a nearby market after checking its current address and hours.' },
+      { q: 'Which is better for souvenirs?', a: 'A night market is generally the stronger choice for souvenir browsing; Pub Street is more focused on food and nightlife.' },
+      { q: 'Is there an entrance fee?', a: 'There is no fee to walk along Pub Street; market entry is generally free, with purchases paid separately. Check any ticketed events independently.' },
+    ],
+    related: ['siem-reap-night-markets', 'pub-street-restaurants', 'pub-street-siem-reap-location'],
+  },
   {
     slug: 'siem-reap-nightlife',
     title: 'Siem Reap Nightlife Guide',

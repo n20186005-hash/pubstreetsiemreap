@@ -14,9 +14,7 @@ export const siteConfig = {
   locale: 'km',
 
   resolveBaseUrl(): string {
-    const env =
-      (typeof process !== 'undefined' && process.env && process.env.CURRENT_SITE_DOMAIN) ||
-      (typeof import.meta !== 'undefined' && (import.meta as any).env && (import.meta as any).env.CURRENT_SITE_DOMAIN);
+    const env = import.meta.env?.CURRENT_SITE_DOMAIN;
     const fallback = 'https://pubstreetsiemreap.com';
     let base = (env || fallback).toString().trim().replace(/\/+$/, '');
     if (!/^https?:\/\//.test(base)) base = 'https://' + base;

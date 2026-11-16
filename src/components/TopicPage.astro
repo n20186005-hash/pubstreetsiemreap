@@ -1,6 +1,7 @@
 ---
 import { siteConfig } from '../config';
 import { TOPICS, type Topic } from '../data/topics';
+import { mapsUrl } from '../config';
 
 const { topic, canonical, lang } = Astro.props as {
   topic: Topic;
@@ -65,6 +66,7 @@ const webPageLd = {
   <section class="section-padding">
     <div class="container">
       <p class="section-lead" style="max-width:780px">{topic.intro}</p>
+      <p style="margin-top:18px"><a class="link-accent" href={topic.mapQuery ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(topic.mapQuery)}` : mapsUrl} target="_blank" rel="noopener noreferrer">View the relevant area on Google Maps ↗</a></p>
 
       <div class="intro-body" style="margin-top:34px">
         {

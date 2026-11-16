@@ -17,6 +17,7 @@ const navItems = [
 ];
 
 const langLabels: Record<string, string> = { km: 'ខ្មែរ', en: 'English', zh: '中文' };
+const onHome = Astro.url.pathname === `/${lang}/`;
 ---
 
 <header class="site-header">
@@ -25,7 +26,7 @@ const langLabels: Record<string, string> = { km: 'ខ្មែរ', en: 'English
 
     <ul class="nav-links" id="nav-links">
       {navItems.map((n) => (
-        <li><a href={n.href}>{m.header[n.key as keyof typeof m.header]}</a></li>
+        <li><a href={onHome ? n.href : `/${lang}/${n.href}`}>{m.header[n.key as keyof typeof m.header]}</a></li>
       ))}
     </ul>
 
