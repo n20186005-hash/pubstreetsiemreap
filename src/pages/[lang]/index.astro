@@ -38,7 +38,7 @@ const props = { lang, messages: m, t };
   <TravelGuide {...props} />
   <MapSection {...props} />
   <NearbyPlaces {...props} />
-  {lang === 'en' && <NearbyGuides />}
+  <NearbyGuides lang={lang} />
   <Food {...props} />
   <VisitorSummary {...props} />
   <Amenities {...props} />

@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getAttractions } from '../../../data/attractions-i18n';
+import { siteConfig } from '../../../config';
+
+export function getStaticPaths() {
+  return (['en', 'zh', 'km'] as const).flatMap((lang) => getAttractions(lang).map((place) => ({ params: { lang, slug: place.slug }, props: { place, lang } })));
+}
+const { place, lang } = Astro.props;
+const labels = {
+  en: { district:'Explore Siem Reap · Nearby Places', map:'View this place on Google Maps ↗', discover:'Discover', about:'About', managed:'Who looks after it?', basic:'Basic information', location:'Location', admission:'Admission', admissionText:'Public areas are generally free; purchases and events may cost extra.', opening:'Opening', openingText:'Confirm the current schedule and access rules on site.', tips:'Visit tips', photo:'Location-specific photograph', source:'Photo source ↗', context:'History, architecture and local culture', history:'History', architecture:'Architecture and setting', culture:'Cultural context', notice:'What to notice', route:'Suggested walking route', photography:'Photography tips', faq:'Frequently asked questions', directions:'Directions and location', openMap:'Open this place in Google Maps ↗', back:'Explore nearby places', suffix:'Siem Reap Visitor Guide' },
+  zh: { district:'探索暹粒 · 周边景点', map:'在 Google 地图查看此地点 ↗', discover:'探索', about:'关于', managed:'谁负责管理维护？', basic:'基本信息', location:'地址', admission:'门票', admissionText:'普通公共区域通常免费，购物或活动可能另行收费。', opening:'开放时间', openingText:'请在现场核实最新时间及进入规则。', tips:'游览建议', photo:'对应地点实景照片', source:'照片来源 ↗', context:'历史、建筑与当地文化', history:'历史背景', architecture:'建筑及环境特色', culture:'文化意义', notice:'观察重点', route:'建议步行路线', photography:'拍摄机位与建议', faq:'常见问题', directions:'交通指南与位置', openMap:'在 Google 地图打开此地点 ↗', back:'返回周边景点', suffix:'暹粒旅行指南' },
+  km: { district:'ស្វែងយល់ពីសៀមរាប · ទីកន្លែងក្បែរៗ', map:'មើលទីតាំងនេះលើ Google Maps ↗', discover:'ស្វែងយល់ពី', about:'អំពី', managed:'អ្នកណាគ្រប់គ្រង និងថែទាំ?', basic:'ព័ត៌មានមូលដ្ឋាន', location:'អាសយដ្ឋាន', admission:'ថ្លៃចូល', admissionText:'ជាទូទៅតំបន់សាធារណៈមិនគិតថ្លៃ ប៉ុន្តែទំនិញនិងកម្មវិធីអាចមានតម្លៃ។', opening:'ម៉ោងបើក', openingText:'សូមពិនិត្យម៉ោង និងលក្ខខណ្ឌចូលនៅទីតាំងផ្ទាល់។', tips:'គន្លឹះសម្រាប់ភ្ញៀវ', photo:'រូបថតទីតាំងពិត', source:'ប្រភពរូបថត ↗', context:'ប្រវត្តិ ស្ថាបត្យកម្ម និងវប្បធម៌', history:'ប្រវត្តិ', architecture:'ស្ថាបត្យកម្ម និងបរិយាកាស', culture:'បរិបទវប្បធម៌', notice:'ចំណុចគួរសង្កេត', route:'ផ្លូវដើរណែនាំ', photography:'គន្លឹះថតរូប', faq:'សំណួរញឹកញាប់', directions:'ផ្លូវទៅ និងទីតាំង', openMap:'បើកទីតាំងនេះលើ Google Maps ↗', back:'ត្រឡប់ទៅទីកន្លែងក្បែរៗ', suffix:'មគ្គុទ្ទេសក៍ទេសចរណ៍សៀមរាប' },
+}[lang as 'en' | 'zh' | 'km'];
+const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.mapQuery)}`;
+const canonical = `${siteConfig.baseUrl}/${lang}/attractions/${place.slug}/`;
+const alternates = Object.fromEntries((['en', 'zh', 'km'] as const).map((l) => [l, `${siteConfig.baseUrl}/${l}/attractions/${place.slug}/`]));
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'TouristAttraction', name: place.name, description: place.introduction, address: place.address, url: canonical, sameAs: mapUrl },
+  { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Pub Street', item: `${siteConfig.baseUrl}/${lang}/` },
+    { '@type': 'ListItem', position: 2, name: labels.back, item: `${siteConfig.baseUrl}/${lang}/#nearby-guides` },
+    { '@type': 'ListItem', position: 3, name: place.name, item: canonical },
+  ] },
+];
+---
+<BaseLayout path={`attractions/${place.slug}`} title={`${place.name} | ${labels.suffix}`} description={`${place.subtitle} — ${place.introduction}`} noJsonLd={true} alternates={{...alternates, xDefault: alternates.en}}>
+  <article>
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-inner">
+        <p class="local">{labels.district}</p>
+        <h1>{place.name}</h1>
+        <p class="tagline">{place.subtitle}</p>
+        <a class="btn-cta btn-cta-primary" href={mapUrl} target="_blank" rel="noopener noreferrer">{labels.map}</a>
+      </div>
+    </section>
+    <section class="section-padding">
+      <div class="container">
+        <h2 class="section-title">{labels.discover} {place.name}</h2>
+        <p class="section-lead">{place.introduction}</p>
+        <div class="card card-pad" style="margin-top:24px">
+          <h3>{labels.about} {place.name} · {labels.managed}</h3>
+          <p>{place.management}</p>
+        </div>
+        <div class="nearby-grid" style="margin-top:26px">
+          <div class="card card-pad"><h3>{labels.basic}</h3><p><strong>{labels.location}:</strong> {place.address}</p><p><strong>{labels.admission}:</strong> {labels.admissionText}</p><p><strong>{labels.opening}:</strong> {labels.openingText}</p></div>
+          <div class="card card-pad"><h3>{labels.tips}</h3><ul>{place.tips.map((tip) => <li>{tip}</li>)}</ul></div>
+        </div>
+        <figure class="card" style="overflow:hidden;margin:32px 0">
+          <img src={place.photo} alt={`${place.name} — ${labels.photo}`} loading="lazy" style="width:100%;max-height:520px;object-fit:cover" />
+          <figcaption style="padding:12px 20px;color:var(--text-muted);font-size:.85rem">{labels.photo} · <a class="link-accent" href={place.photoSource} target="_blank" rel="noopener noreferrer">{labels.source}</a></figcaption>
+        </figure>
+        <h2 class="section-title">{labels.context}</h2>
+        <div class="nearby-grid">
+          <div class="card card-pad"><h3>{labels.history}</h3><p>{place.history}</p></div>
+          <div class="card card-pad"><h3>{labels.architecture}</h3><p>{place.architecture}</p></div>
+          <div class="card card-pad"><h3>{labels.culture}</h3><p>{place.culture}</p></div>
+        </div>
+        <h2 class="section-title" style="margin-top:40px">{labels.notice}</h2>
+        <ul>{place.highlights.map((point) => <li>{point}</li>)}</ul>
+        <h2 class="section-title" style="margin-top:40px">{labels.route}</h2>
+        <ol>{place.route.map((step) => <li style="margin-bottom:12px">{step}</li>)}</ol>
+        <h2 class="section-title" style="margin-top:40px">{labels.photography}</h2>
+        <p class="section-lead">{place.photoTips}</p>
+        <h2 class="section-title" style="margin-top:40px">{labels.faq}</h2>
+        <div class="card card-pad">{place.faq.map((f) => <div style="margin-bottom:22px"><h3>{f.q}</h3><p>{f.a}</p></div>)}</div>
+        <h2 class="section-title" style="margin-top:40px">{labels.directions}</h2>
+        <p>{place.address}</p>
+        <p><a class="link-accent" href={mapUrl} target="_blank" rel="noopener noreferrer">{labels.openMap}</a></p>
+        <p style="margin-top:32px"><a class="link-accent" href={`/${lang}/#nearby-guides`}>← {labels.back}</a></p>
+      </div>
+    </section>
+  </article>
+  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</BaseLayout>

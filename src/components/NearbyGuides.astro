@@ -1,15 +1,22 @@
 ---
-import { ATTRACTIONS } from '../data/attractions';
+import { getAttractions } from '../data/attractions-i18n';
+const { lang } = Astro.props as { lang: 'en' | 'zh' | 'km' };
+const places = getAttractions(lang);
+const labels = {
+  en: ['Explore more of Siem Reap', 'Nearby places worth a closer look', 'Step beyond Pub Street to discover market life, riverside craft stalls and Buddhist heritage. Each place has its own walking route and map.', 'Explore place →'],
+  zh: ['探索更多暹粒景点', '周边景点深度游览', '从酒吧街出发，探索传统市场、河岸工艺夜市、佛教寺院和城市花园。每个地点都有独立地图及步行路线。', '查看景点 →'],
+  km: ['ស្វែងយល់ពីសៀមរាបបន្ថែម', 'ទីកន្លែងក្បែរៗសម្រាប់ទស្សនា', 'ចេញពីផាប់ស្ទ្រីត ដើម្បីស្វែងយល់ពីផ្សារប្រពៃណី សិប្បកម្មមាត់ស្ទឹង វត្ត និងសួនសាធារណៈ។ ទីកន្លែងនីមួយៗមានផែនទីនិងផ្លូវដើរផ្ទាល់។', 'មើលទីកន្លែង →'],
+}[lang];
 ---
 <section class="section-padding" id="nearby-guides" style="background:var(--surface-accent)">
   <div class="container">
-    <span class="eyebrow">Explore more of Siem Reap</span>
-    <h2 class="section-title">Nearby places worth a closer look</h2>
-    <p class="section-lead">Step beyond Pub Street to discover market life, riverside craft stalls and Buddhist heritage. Each place has its own walking route and map.</p>
+    <span class="eyebrow">{labels[0]}</span>
+    <h2 class="section-title">{labels[1]}</h2>
+    <p class="section-lead">{labels[2]}</p>
     <div class="nearby-grid" style="margin-top:24px">
-      {ATTRACTIONS.map((p) => <a class="card nearby-card" href={`/en/attractions/${p.slug}/`} style="overflow:hidden;display:block">
+      {places.map((p) => <a class="card nearby-card" href={`/${lang}/attractions/${p.slug}/`} style="overflow:hidden;display:block">
         <img src={p.photo} alt={p.name} loading="lazy" style="height:190px;width:100%;object-fit:cover" />
-        <div class="card-pad"><h3>{p.name}</h3><p>{p.subtitle}</p><span class="link-accent">Explore place →</span></div>
+        <div class="card-pad"><h3>{p.name}</h3><p>{p.subtitle}</p><span class="link-accent">{labels[3]}</span></div>
       </a>)}
     </div>
   </div>
