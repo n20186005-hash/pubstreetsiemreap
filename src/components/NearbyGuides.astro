@@ -1,0 +1,16 @@
+---
+import { ATTRACTIONS } from '../data/attractions';
+---
+<section class="section-padding" id="nearby-guides" style="background:var(--surface-accent)">
+  <div class="container">
+    <span class="eyebrow">Explore more of Siem Reap</span>
+    <h2 class="section-title">Nearby places worth a closer look</h2>
+    <p class="section-lead">Step beyond Pub Street to discover market life, riverside craft stalls and Buddhist heritage. Each place has its own walking route and map.</p>
+    <div class="nearby-grid" style="margin-top:24px">
+      {ATTRACTIONS.map((p) => <a class="card nearby-card" href={`/en/attractions/${p.slug}/`} style="overflow:hidden;display:block">
+        <img src={p.photo} alt={p.name} loading="lazy" style="height:190px;width:100%;object-fit:cover" />
+        <div class="card-pad"><h3>{p.name}</h3><p>{p.subtitle}</p><span class="link-accent">Explore place →</span></div>
+      </a>)}
+    </div>
+  </div>
+</section>

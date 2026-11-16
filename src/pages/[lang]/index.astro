@@ -18,6 +18,7 @@ import Amenities from '../../components/Amenities.astro';
 import Practical from '../../components/Practical.astro';
 import FAQ from '../../components/FAQ.astro';
 import TopicLinks from '../../components/TopicLinks.astro';
+import NearbyGuides from '../../components/NearbyGuides.astro';
 
 export function getStaticPaths() {
   return languagesList.map((lang) => ({ params: { lang } }));
@@ -37,6 +38,7 @@ const props = { lang, messages: m, t };
   <TravelGuide {...props} />
   <MapSection {...props} />
   <NearbyPlaces {...props} />
+  {lang === 'en' && <NearbyGuides />}
   <Food {...props} />
   <VisitorSummary {...props} />
   <Amenities {...props} />
