@@ -1,8 +1,13 @@
 ---
 import Icon from './Icon.astro';
 
-const { messages: m } = Astro.props as { messages: any };
+const { messages: m, lang } = Astro.props as { messages: any; lang: 'en' | 'zh' | 'km' };
 const intro = m.intro;
+const links = {
+  en: ['About this guide', 'Sources', 'Photo credits'],
+  zh: ['关于本指南', '资料来源', '图片版权'],
+  km: ['អំពីមគ្គទេសក៍', 'ប្រភពព័ត៌មាន', 'ប្រភពរូបភាព'],
+}[lang];
 ---
 
 <section class="section-padding" id="intro">
@@ -49,5 +54,10 @@ const intro = m.intro;
         </div>
       </div>
     </div>
+    <nav class="site-info-links" aria-label={links[0]}>
+      <a href={`/${lang}/about-guide/`}>{links[0]}</a>
+      <a href={`/${lang}/sources/`}>{links[1]}</a>
+      <a href={`/${lang}/image-credits/`}>{links[2]}</a>
+    </nav>
   </div>
 </section>

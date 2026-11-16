@@ -3,14 +3,65 @@ const { messages: m, lang } = Astro.props as { lang: string; messages: any; t: (
 const legal = m.legal;
 const page = Astro.props.page as 'privacy' | 'terms' | 'cookie';
 const doc = legal[page];
-const stateLabel: Record<string, string> = { always: 'always', on: 'on', off: 'off' };
+const extra = {
+  zh: {
+    privacy: [
+      ['数据处理与保留', '本站为静态旅游指南，不要求注册账号，也不直接处理付款。访问服务器可能产生必要的安全与访问日志；其保留期限由实际托管服务配置决定。网站不会主动索取护照、支付卡或敏感身份资料。'],
+      ['分析与您的选择', '分析统计仅在您明确允许后启用。您可以随时通过 Cookie 设置页撤回同意；撤回后将停止后续分析脚本加载，但无法自动撤销第三方已依法处理的既有数据。'],
+      ['地图、外部链接和跨境处理', '点击 Google Maps、OpenStreetMap 或其他外部参考链接后，您将直接访问第三方网站。相关第三方可能根据其政策处理浏览数据，服务地点也可能位于您所在国家或地区之外。'],
+      ['安全、儿童及政策更新', '我们采取合理措施维护网站安全，但互联网传输不能保证绝对安全。本站并非专为儿童设计。政策变化将在本页更新日期和正文中反映。'],
+      ['联系与更正', '有关隐私、资料更正或删除请求，请联系 laupetter72@gmail.com，并说明相关网页和问题。']
+    ],
+    terms: [
+      ['参观者的责任', '本站不销售门票、交通、餐饮或住宿服务。街区开放、商户经营时间、价格、交通和活动可能临时改变。请独立核实最新信息、遵守当地法规并尊重居民与商家。'],
+      ['地图、评价和第三方内容', '地图与外部链接属于对应第三方平台。站内出现的评分或资料快照不构成保证或商业背书；第三方网站可能适用不同的条款。'],
+      ['链接与引用', '欢迎以注明来源并附上链接的方式引用本站原创事实性文字摘要。未经权利人许可，不得假定本站拥有照片或第三方素材的再授权权利。'],
+      ['修改与联系', '我们可能修订本条款并更新本页日期。发现错误或有相关问题，可发送邮件至 laupetter72@gmail.com。']
+    ]
+  },
+  en: {
+    privacy: [
+      ['Processing and retention', 'This is a static travel guide with no required user account or payment checkout. Hosting providers may process security and access logs; retention depends on their configuration. We do not ask for passports, payment cards or sensitive identification.'],
+      ['Analytics and your choices', 'Analytics runs only after you opt in. You can withdraw consent from Cookie Settings at any time. This prevents future analytics loading but does not automatically erase information previously processed by third parties.'],
+      ['Maps and external services', 'Following links to Google Maps, OpenStreetMap or other sources takes you to external services governed by their own privacy practices, potentially including processing outside your country.'],
+      ['Security, children and updates', 'We take reasonable care to keep the site secure, but cannot guarantee absolute network security. The site is not designed specifically for children. Material policy changes will be reflected on this page.'],
+      ['Contact and corrections', 'For privacy concerns or requests to correct or delete information, email laupetter72@gmail.com and identify the relevant page.']
+    ],
+    terms: [
+      ['Visitor responsibility', 'We do not sell tickets, transport, dining or accommodation. Hours, prices, routes and events can change. Verify critical details independently and follow local rules.'],
+      ['Maps, ratings and third parties', 'External maps and references are operated by their respective providers. Ratings and factual snapshots are not guarantees or commercial endorsements.'],
+      ['Links and reuse', 'You may quote short summaries of our original factual writing with attribution and a link. Do not assume that this website can sublicense third-party photos or other materials.'],
+      ['Changes and contact', 'We may revise these terms and update the date shown here. Report errors or questions to laupetter72@gmail.com.']
+    ]
+  },
+  km: {
+    privacy: [
+      ['ការដំណើរការ និងការរក្សាទុកទិន្នន័យ', 'នេះជាគេហទំព័រមគ្គទេសក៍ទេសចរណ៍ថេរ ដែលមិនទាមទារគណនី ឬការទូទាត់ប្រាក់។ អ្នកផ្តល់សេវាបង្ហោះអាចរក្សាកំណត់ត្រាសុវត្ថិភាព និងការចូលប្រើ តាមការកំណត់របស់ពួកគេ។ យើងមិនស្នើសុំព័ត៌មានលិខិតឆ្លងដែន ឬកាតធនាគារទេ។'],
+      ['ការវិភាគ និងជម្រើសរបស់អ្នក', 'ការវិភាគចរាចរណ៍ដំណើរការតែបន្ទាប់ពីអ្នកយល់ព្រមប៉ុណ្ណោះ។ អ្នកអាចដកការយល់ព្រមនៅទំព័រការកំណត់ Cookie បានគ្រប់ពេល។ វាបញ្ឈប់ការផ្ទុកការវិភាគនាពេលក្រោយ ប៉ុន្តែមិនលុបទិន្នន័យដែលភាគីទីបីបានដំណើរការរួចទេ។'],
+      ['ផែនទី និងតំណភ្ជាប់ខាងក្រៅ', 'ពេលចុច Google Maps, OpenStreetMap ឬប្រភពខាងក្រៅផ្សេងទៀត អ្នកទៅកាន់សេវារបស់ភាគីទីបី ដែលមានគោលការណ៍ឯកជនភាពផ្ទាល់ខ្លួន។'],
+      ['សុវត្ថិភាព កុមារ និងការធ្វើបច្ចុប្បន្នភាព', 'យើងយកចិត្តទុកដាក់លើសុវត្ថិភាពគេហទំព័រ ប៉ុន្តែមិនអាចធានាសុវត្ថិភាពដាច់ខាតបានទេ។ គេហទំព័រនេះមិនត្រូវបានរចនាឡើងជាពិសេសសម្រាប់កុមារឡើយ។'],
+      ['ទំនាក់ទំនង និងការកែតម្រូវ', 'សម្រាប់សំណើឯកជនភាព ការកែតម្រូវ ឬការលុបទិន្នន័យ សូមសរសេរទៅ laupetter72@gmail.com និងបញ្ជាក់ទំព័រពាក់ព័ន្ធ។']
+    ],
+    terms: [
+      ['ទំនួលខុសត្រូវរបស់អ្នកទស្សនា', 'យើងមិនលក់សំបុត្រ ការដឹកជញ្ជូន អាហារ ឬកន្លែងស្នាក់នៅទេ។ ម៉ោងបើក តម្លៃ និងសកម្មភាពអាចផ្លាស់ប្តូរ។ សូមផ្ទៀងផ្ទាត់ព័ត៌មានសំខាន់ៗដោយខ្លួនឯង និងគោរពច្បាប់ក្នុងតំបន់។'],
+      ['ផែនទី ការវាយតម្លៃ និងភាគីទីបី', 'ផែនទី និងឯកសារយោងខាងក្រៅជាសេវារបស់អ្នកផ្តល់សេវាផ្សេងៗ។ ការវាយតម្លៃមិនមែនជាការធានា ឬការគាំទ្រពាណិជ្ជកម្មទេ។'],
+      ['តំណភ្ជាប់ និងការប្រើប្រាស់ឡើងវិញ', 'អាចដកស្រង់សេចក្តីសង្ខេបខ្លីនៃអត្ថបទដើមដោយបញ្ជាក់ប្រភព និងតំណភ្ជាប់។ កុំសន្មតថាគេហទំព័រនេះអាចផ្តល់អាជ្ញាបណ្ណបន្តសម្រាប់រូបថតភាគីទីបី។'],
+      ['ការកែប្រែ និងទំនាក់ទំនង', 'យើងអាចកែប្រែលក្ខខណ្ឌ និងកាលបរិច្ឆេទនៅទំព័រនេះ។ សម្រាប់សំណួរ សូមទាក់ទង laupetter72@gmail.com។']
+    ]
+  }
+}[lang as 'en' | 'zh' | 'km'];
+const cookieUi = {
+  en: { analytics: 'Allow analytics', preferences: 'Remember preferences', optional: 'Optional', saved: 'Your choices have been saved. Reload to apply the new settings.', off: 'Optional cookies are disabled.', detail: 'Optional categories are off until you enable them. No advertising cookies are currently used.' },
+  zh: { analytics: '允许访问分析', preferences: '记住网站偏好', optional: '可选择', saved: '已保存您的选择，刷新页面后生效。', off: '已关闭可选 Cookie。', detail: '可选 Cookie 默认关闭，只有您开启后才会生效。本站目前不使用广告 Cookie。' },
+  km: { analytics: 'អនុញ្ញាតការវិភាគ', preferences: 'ចងចាំចំណូលចិត្ត', optional: 'ជាជម្រើស', saved: 'បានរក្សាទុកជម្រើសរបស់អ្នក។ សូមផ្ទុកទំព័រឡើងវិញ។', off: 'បានបិទ Cookie ជាជម្រើស។', detail: 'Cookie ជាជម្រើសត្រូវបានបិទជាលំនាំដើម។ គេហទំព័រនេះមិនប្រើ Cookie ផ្សាយពាណិជ្ជកម្មទេ។' }
+}[lang as 'en' | 'zh' | 'km'];
 ---
 
 <article class="legal-doc container fade-up">
   <a class="legal-back" href={`/${lang}/`}>{legal.backToSite}</a>
 
   <h1 class="legal-title">{doc.title}</h1>
-  <p class="legal-updated">{doc.updated}</p>
+  <p class="legal-updated">{doc.updated.replace('2026年7月','2026年11月').replace('July 2026','November 2026').replace('កក្កដា ឆ្នាំ២០២៦','វិច្ឆិកា ឆ្នាំ២០២៦')}</p>
 
   {page === 'cookie' ? (
     <>
@@ -20,7 +71,7 @@ const stateLabel: Record<string, string> = { always: 'always', on: 'on', off: 'o
           <div class={`cookie-cat state-${c.state}`}>
             <div class="cookie-cat-head">
               <h3>{c.name}</h3>
-              <span class={`cookie-badge badge-${c.state}`}>{c.status}</span>
+              <span class={`cookie-badge badge-${c.state === 'on' ? 'off' : c.state}`}>{c.state === 'on' ? cookieUi.optional : c.status}</span>
             </div>
             <p class="cookie-cat-desc">{c.desc}</p>
             {c.note && <p class="cookie-cat-note">{c.note}</p>}
@@ -30,14 +81,20 @@ const stateLabel: Record<string, string> = { always: 'always', on: 'on', off: 'o
       <div class="cookie-manage">
         <h3>{doc.manageTitle}</h3>
         <p>{doc.manageText}</p>
+        <p>{cookieUi.detail}</p>
+      </div>
+      <div class="cookie-controls">
+        <label><input type="checkbox" id="cookie-analytics" /> {cookieUi.analytics}</label>
+        <label><input type="checkbox" id="cookie-preferences" /> {cookieUi.preferences}</label>
       </div>
       <div class="cookie-actions">
         <button type="button" class="btn-cta btn-cta-primary" id="cookie-save">{doc.save}</button>
         <button type="button" class="btn-cta btn-cta-ghost" id="cookie-reject">{doc.rejectAll}</button>
       </div>
+      <p class="cookie-feedback" id="cookie-feedback" role="status" aria-live="polite" data-saved={cookieUi.saved} data-rejected={cookieUi.off}></p>
     </>
   ) : (
-    doc.sections.map((s: any) => (
+    [...doc.sections, ...extra[page].map(([heading, body]) => ({ heading, body }))].map((s: any) => (
       <section class="legal-section">
         <h2>{s.heading}</h2>
         {s.body && <p>{s.body}</p>}
@@ -55,17 +112,27 @@ const stateLabel: Record<string, string> = { always: 'always', on: 'on', off: 'o
   (function () {
     var save = document.getElementById('cookie-save');
     var reject = document.getElementById('cookie-reject');
+    var analytics = document.getElementById('cookie-analytics');
+    var preferences = document.getElementById('cookie-preferences');
+    var feedback = document.getElementById('cookie-feedback');
+    try {
+      var existing = JSON.parse(localStorage.getItem('cookie-consent') || '{}');
+      if (analytics) analytics.checked = existing.analytics === true;
+      if (preferences) preferences.checked = existing.preference === true;
+    } catch (e) {}
     if (save) save.addEventListener('click', function () {
       try {
-        localStorage.setItem('cookie-consent', JSON.stringify({ necessary: true, analytics: true, preference: true, marketing: true }));
+        localStorage.setItem('cookie-consent', JSON.stringify({ necessary: true, analytics: !!analytics.checked, preference: !!preferences.checked, marketing: false }));
       } catch (e) {}
-      save.textContent = '✓';
+      if (feedback) feedback.textContent = feedback.dataset.saved;
     });
     if (reject) reject.addEventListener('click', function () {
       try {
         localStorage.setItem('cookie-consent', JSON.stringify({ necessary: true, analytics: false, preference: false, marketing: false }));
       } catch (e) {}
-      reject.textContent = '✓';
+      if (analytics) analytics.checked = false;
+      if (preferences) preferences.checked = false;
+      if (feedback) feedback.textContent = feedback.dataset.rejected;
     });
   })();
 </script>

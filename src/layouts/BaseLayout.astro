@@ -109,8 +109,8 @@ const faqLd = !noJsonLd && m?.faq?.items
             // Respect the visitor's consent choice from the Cookie Settings page.
             // We only load Google Analytics when analytics cookies are allowed.
             var consent = localStorage.getItem('cookie-consent');
-            if (consent && JSON.parse(consent).analytics !== true) return;
-          } catch (e) {}
+            if (!consent || JSON.parse(consent).analytics !== true) return;
+          } catch (e) { return; }
           var s = document.createElement('script');
           s.async = true;
           s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;

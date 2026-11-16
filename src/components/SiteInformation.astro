@@ -1,0 +1,46 @@
+---
+const { lang, messages: m, page } = Astro.props as { lang: 'en' | 'zh' | 'km'; messages: any; page: 'about' | 'sources' | 'images' };
+const copy = {
+  en: {
+    about: 'About this guide', sources: 'Sources and fact-checking', images: 'Photo credits',
+    back: '← Back to Pub Street', intro: 'How this independent visitor guide is maintained',
+    evidence: 'Information and updates', credit: 'Image ownership',
+    note: 'Travel conditions and business hours can change. Verify important details on site before visiting.',
+  },
+  zh: {
+    about: '关于本指南', sources: '资料来源与事实核查', images: '图片来源与版权',
+    back: '← 返回酒吧街指南', intro: '了解本站的资料整理与维护方式',
+    evidence: '资料核查与更新', credit: '图片归属',
+    note: '开放时间、现场环境和商家安排可能变化，出发前请在现场核实重要信息。',
+  },
+  km: {
+    about: 'អំពីមគ្គទេសក៍នេះ', sources: 'ប្រភពព័ត៌មាន និងការផ្ទៀងផ្ទាត់', images: 'ប្រភពរូបភាព និងរក្សាសិទ្ធិ',
+    back: '← ត្រឡប់ទៅមគ្គទេសក៍ផាប់ស្ទ្រីត', intro: 'របៀបរៀបចំ និងថែរក្សាព័ត៌មានសម្រាប់អ្នកទស្សនា',
+    evidence: 'ការផ្ទៀងផ្ទាត់ និងបច្ចុប្បន្នភាព', credit: 'ម្ចាស់រូបភាព',
+    note: 'ម៉ោងបើក និងលក្ខខណ្ឌនៅទីតាំងអាចផ្លាស់ប្តូរ។ សូមផ្ទៀងផ្ទាត់ព័ត៌មានសំខាន់ៗនៅទីតាំងមុនទៅទស្សនា។',
+  },
+}[lang];
+const titles = { about: copy.about, sources: copy.sources, images: copy.images };
+---
+
+<article class="legal-doc container fade-up">
+  <a class="legal-back" href={`/${lang}/`}>{copy.back}</a>
+  <h1 class="legal-title">{titles[page]}</h1>
+  <p class="legal-lead">{copy.intro}</p>
+
+  {page === 'about' && <>
+    <section class="legal-section"><h2>{m.footer.missionTitle}</h2><p>{m.footer.missionText}</p></section>
+    <section class="legal-section"><h2>{copy.about}</h2><p>{m.footer.tagline}</p><p>{m.footer.declaration.org}</p></section>
+  </>}
+  {page === 'sources' && <>
+    <section class="legal-section"><h2>{copy.evidence}</h2><p>{m.footer.declaration.org}</p><p>{copy.note}</p></section>
+    <section class="legal-section"><h2>{m.footer.resourcesTitle}</h2><ul>{m.footer.resources.map((r: any) => <li><a class="link-accent" href={r.url} target="_blank" rel="noopener noreferrer">{r.name}</a> — {r.note}</li>)}</ul></section>
+  </>}
+  {page === 'images' && <section class="legal-section"><h2>{copy.credit}</h2><p>{m.footer.declaration.image}</p></section>}
+
+  <nav class="site-info-links" aria-label={copy.about}>
+    <a href={`/${lang}/about-guide/`}>{copy.about}</a>
+    <a href={`/${lang}/sources/`}>{copy.sources}</a>
+    <a href={`/${lang}/image-credits/`}>{copy.images}</a>
+  </nav>
+</article>

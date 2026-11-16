@@ -618,7 +618,7 @@
     "cookieSettingsLink": "Cookie Settings",
     "privacy": {
       "title": "Privacy Policy",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: November 2026",
       "sections": [
         {
           "heading": "Information we collect",
@@ -641,7 +641,7 @@
         },
         {
           "heading": "Third-party services",
-          "body": "Our website may use third-party services such as Google Maps (for embedded maps and location data), Google Analytics (for traffic analysis), and Unsplash (for images). These services have their own privacy policies.",
+          "body": "This site links to external mapping and reference services, including Google Maps and OpenStreetMap. Google Analytics may run after you consent. Third-party providers have their own privacy policies.",
           "items": []
         },
         {
@@ -658,7 +658,7 @@
     },
     "terms": {
       "title": "Terms of Service",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: November 2026",
       "sections": [
         {
           "heading": "Access and use",
@@ -677,7 +677,7 @@
         },
         {
           "heading": "Intellectual property",
-          "body": "The design and original content of this website are protected by copyright. Images are from Unsplash and used under their license. Use of Google Maps data complies with Google's Terms of Service.",
+          "body": "Our site design and original writing remain protected by applicable intellectual property laws. Rights to published photographs remain with their respective photographers or rights holders; maps and external materials belong to their providers.",
           "items": []
         },
         {
@@ -689,7 +689,7 @@
     },
     "cookie": {
       "title": "Cookie Settings",
-      "updated": "Last updated: July 2026",
+      "updated": "Last updated: November 2026",
       "intro": "We use cookies to improve your browsing experience. You can manage your preferences below.",
       "categories": [
         {
@@ -728,6 +728,8 @@
     }
   },
   "footer": {
+    "copyright": "© 2026 Pub Street · All rights reserved",
+    "independentNotice": "This website is an independent travel information project. We are not affiliated with any government agency or official organization.",
     "siteName": "Pub Street",
     "tagline": "An independent, non-profit visitor guide to Siem Reap's most famous nightlife street — built from public information, not hotel or booking promotions.",
     "missionTitle": "Our mission",

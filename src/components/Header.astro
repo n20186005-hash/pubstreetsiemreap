@@ -21,7 +21,8 @@ const langLabels: Record<string, string> = { km: 'ខ្មែរ', en: 'English
 const onHome = Astro.url.pathname === `/${lang}/`;
 const attractionPath = Astro.url.pathname.match(/^\/(?:en|zh|km)\/(attractions\/[^/]+)\/?$/)?.[1];
 const topicPath = Astro.url.pathname.match(/^\/(?:en|zh|km)\/([^/]+)\/?$/)?.[1];
-const localizedPath = attractionPath ?? (topicPath && TOPICS.some((topic) => topic.slug === topicPath) ? topicPath : undefined);
+const sitePages = ['about-guide', 'sources', 'image-credits', 'privacy-policy', 'terms-of-service', 'cookie-settings'];
+const localizedPath = attractionPath ?? (topicPath && (TOPICS.some((topic) => topic.slug === topicPath) || sitePages.includes(topicPath)) ? topicPath : undefined);
 ---
 
 <header class="site-header">

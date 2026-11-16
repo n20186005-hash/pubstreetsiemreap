@@ -1,0 +1,11 @@
+---
+import { languagesList, getI18n } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteInformation from '../../components/SiteInformation.astro';
+export function getStaticPaths() { return languagesList.map(lang => ({ params: { lang } })); }
+const { lang, messages: m } = getI18n(Astro.url);
+const title = { zh: '图片来源与版权', km: 'ប្រភពរូបភាព និងរក្សាសិទ្ធិ', en: 'Photo credits' }[lang];
+---
+<BaseLayout path="image-credits" title={title} noJsonLd>
+  <div class="legal-wrap"><SiteInformation lang={lang} messages={m} page="images" /></div>
+</BaseLayout>

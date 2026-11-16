@@ -1,0 +1,11 @@
+---
+import { languagesList, getI18n } from '../../i18n/ui';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteInformation from '../../components/SiteInformation.astro';
+export function getStaticPaths() { return languagesList.map(lang => ({ params: { lang } })); }
+const { lang, messages: m } = getI18n(Astro.url);
+const title = { zh: '资料来源与事实核查', km: 'ប្រភពព័ត៌មាន និងការផ្ទៀងផ្ទាត់', en: 'Sources and fact-checking' }[lang];
+---
+<BaseLayout path="sources" title={title} noJsonLd>
+  <div class="legal-wrap"><SiteInformation lang={lang} messages={m} page="sources" /></div>
+</BaseLayout>
