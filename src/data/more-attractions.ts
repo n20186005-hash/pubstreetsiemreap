@@ -30,7 +30,7 @@ export const MORE_ATTRACTIONS: NearbyAttraction[] = [
     subtitle: 'A city pagoda with ornate architecture and difficult modern history',
     address: 'Wat Kesararam, National Road 6, Sangkat Kouk Chak, Siem Reap, Cambodia',
     mapQuery: 'Wat Kesararam Wat Keseram National Road 6 Siem Reap Cambodia',
-    photo: 'https://www.cambotours.com/userfiles/thumbs/wat-kesararam.jpg', photoSource: 'https://www.cambotours.com/wat-kesararam.html',
+    photo: 'https://www.angkor-temples-in-cambodia.com/uploads/3/0/0/4/30047791/wat-kesararam-01_orig.jpg', photoSource: 'https://www.angkor-temples-in-cambodia.com/schoumlnlein-blog/wat-kesararam-siem-reap',
     factSources: [{ label:'ECCC case record D390 (PDF)', url:'https://www.eccc.gov.kh/sites/default/files/documents/courtdoc/D390_ENreadacted.pdf' }, {label:'Hello Angkor — Wat Kesararam',url:'https://helloangkor.com/attractions/wat-kesararam/'}],
     introduction: 'Wat Kesararam is an active Buddhist monastery near the National Road 6 corridor. Its vivid temple structures invite close observation, while the site also carries painful associations with the Khmer Rouge era; a thoughtful visit should recognise both dimensions.',
     management: 'Religious worship and the pagoda’s day-to-day activity belong to its resident monastic community and temple custodians. Historical documentation by the Extraordinary Chambers in the Courts of Cambodia does not make the court a site manager.',

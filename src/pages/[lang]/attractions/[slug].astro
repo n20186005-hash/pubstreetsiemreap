@@ -35,7 +35,7 @@ const ld = [
 <BaseLayout path={`attractions/${place.slug}`} title={`${place.name} | ${labels.suffix}`} description={`${place.subtitle} — ${place.introduction}`} noJsonLd={true} alternates={{...alternates, xDefault: alternates.en}}>
   <article>
     <section class="hero">
-      <div class="hero-bg"></div>
+      <div class="hero-bg" style={`background-image:url('${place.photo}')`}></div>
       <div class="container hero-inner">
         <p class="local">{labels.district}</p>
         <h1>{place.name}</h1>
