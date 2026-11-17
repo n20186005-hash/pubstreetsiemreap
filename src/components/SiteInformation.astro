@@ -30,10 +30,10 @@ const titles = { about: copy.about, sources: copy.sources, images: copy.images }
 
   {page === 'about' && <>
     <section class="legal-section"><h2>{m.footer.missionTitle}</h2><p>{m.footer.missionText}</p></section>
-    <section class="legal-section"><h2>{copy.about}</h2><p>{m.footer.tagline}</p><p>{m.footer.declaration.org}</p></section>
+    <section class="legal-section"><h2>{copy.about}</h2><p>{m.footer.tagline}</p><p>{m.footer.declaration.org}</p><p>{m.practical.subtitle}</p></section>
   </>}
   {page === 'sources' && <>
-    <section class="legal-section"><h2>{copy.evidence}</h2><p>{m.footer.declaration.org}</p><p>{copy.note}</p></section>
+    <section class="legal-section"><h2>{copy.evidence}</h2><p>{m.footer.declaration.org}</p><p>{m.amenities.disclaimer}</p><p>{copy.note}</p></section>
     <section class="legal-section"><h2>{m.footer.resourcesTitle}</h2><ul>{m.footer.resources.map((r: any) => <li><a class="link-accent" href={r.url} target="_blank" rel="noopener noreferrer">{r.name}</a> — {r.note}</li>)}</ul></section>
   </>}
   {page === 'images' && <section class="legal-section"><h2>{copy.credit}</h2><p>{m.footer.declaration.image}</p></section>}

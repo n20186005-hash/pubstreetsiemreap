@@ -6,6 +6,7 @@ export interface NearbyAttraction {
   mapQuery: string;
   photo: string;
   photoSource: string;
+  factSources?: { label: string; url: string }[];
   introduction: string;
   management: string;
   history: string;

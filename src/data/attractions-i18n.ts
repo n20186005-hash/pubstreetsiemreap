@@ -1,4 +1,5 @@
 import { ATTRACTIONS, type NearbyAttraction } from './attractions';
+import { getMoreAttractions } from './more-attractions-i18n';
 
 type Translation = Pick<NearbyAttraction, 'name' | 'subtitle' | 'introduction' | 'management' | 'history' | 'architecture' | 'culture' | 'highlights' | 'route' | 'tips' | 'photoTips' | 'faq'>;
 
@@ -143,7 +144,7 @@ const KM: Record<string, Translation> = {
 };
 
 export function getAttractions(lang: 'en' | 'zh' | 'km'): NearbyAttraction[] {
-  if (lang === 'en') return ATTRACTIONS;
+  if (lang === 'en') return [...ATTRACTIONS, ...getMoreAttractions(lang)];
   const dictionary = lang === 'zh' ? ZH : KM;
-  return ATTRACTIONS.map((p) => ({ ...p, ...dictionary[p.slug] }));
+  return [...ATTRACTIONS.map((p) => ({ ...p, ...dictionary[p.slug] })), ...getMoreAttractions(lang)];
 }
